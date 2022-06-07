@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>python on 张圣波&amp;博客</title>
+    <link>https://bobby-sheng.github.io/categories/python/</link>
+    <description>Recent content in python on 张圣波&amp;博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 07 Jun 2022 16:29:13 +0800</lastBuildDate><atom:link href="https://bobby-sheng.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tag</title>
+      <link>https://bobby-sheng.github.io/posts/tech/tag/</link>
+      <pubDate>Tue, 07 Jun 2022 16:29:13 +0800</pubDate>
+      
+      <guid>https://bobby-sheng.github.io/posts/tech/tag/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

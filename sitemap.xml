@@ -3,11 +3,87 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://bobby-sheng.github.io/archives/</loc>
+    <loc>https://bobby-sheng.github.io/tags/api/</loc>
+    <lastmod>2022-06-07T16:29:13+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://bobby-sheng.github.io/categories/</loc>
+    <lastmod>2022-06-07T16:29:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bobby-sheng.github.io/categories/jmeter/</loc>
+    <lastmod>2022-06-07T16:29:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bobby-sheng.github.io/categories/python/</loc>
+    <lastmod>2022-06-07T16:29:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bobby-sheng.github.io/posts/tech/tag/</loc>
+    <lastmod>2022-06-07T16:29:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bobby-sheng.github.io/tags/</loc>
+    <lastmod>2022-06-07T16:29:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bobby-sheng.github.io/tags/ui/</loc>
+    <lastmod>2022-06-07T16:29:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bobby-sheng.github.io/</loc>
+    <lastmod>2022-06-07T16:29:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bobby-sheng.github.io/about/</loc>
+    <lastmod>2022-06-07T16:27:27+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bobby-sheng.github.io/posts/</loc>
+    <lastmod>2022-06-07T16:18:37+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bobby-sheng.github.io/posts/life/</loc>
+    <lastmod>2022-06-07T16:18:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bobby-sheng.github.io/posts/read/</loc>
+    <lastmod>2022-06-07T16:18:14+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bobby-sheng.github.io/posts/blog/</loc>
+    <lastmod>2022-06-07T16:18:07+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bobby-sheng.github.io/posts/tech/</loc>
+    <lastmod>2022-06-07T16:15:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bobby-sheng.github.io/posts/tech/tech/</loc>
+    <lastmod>2022-06-07T16:13:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bobby-sheng.github.io/posts/fisrt-blog/</loc>
+    <lastmod>2022-06-07T16:02:20+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bobby-sheng.github.io/archives/</loc>
   </url>
   
   <url>
@@ -16,14 +92,6 @@
   
   <url>
     <loc>https://bobby-sheng.github.io/series/</loc>
-  </url>
-  
-  <url>
-    <loc>https://bobby-sheng.github.io/tags/</loc>
-  </url>
-  
-  <url>
-    <loc>https://bobby-sheng.github.io/</loc>
   </url>
   
 </urlset>
