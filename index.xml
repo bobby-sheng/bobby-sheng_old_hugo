@@ -17,7 +17,7 @@
     </item>
     
     <item>
-      <title>Tag</title>
+      <title>标签模板</title>
       <link>https://bobby-sheng.github.io/posts/tech/tag/</link>
       <pubDate>Tue, 07 Jun 2022 16:29:13 +0800</pubDate>
       
@@ -32,24 +32,6 @@
       
       <guid>https://bobby-sheng.github.io/about/</guid>
       <description>我是大苏挨个</description>
-    </item>
-    
-    <item>
-      <title>Tech</title>
-      <link>https://bobby-sheng.github.io/posts/tech/tech/</link>
-      <pubDate>Tue, 07 Jun 2022 16:13:13 +0800</pubDate>
-      
-      <guid>https://bobby-sheng.github.io/posts/tech/tech/</guid>
-      <description>卡萨丁卡哈萨克骄傲的</description>
-    </item>
-    
-    <item>
-      <title>Fisrt Blog</title>
-      <link>https://bobby-sheng.github.io/posts/fisrt-blog/</link>
-      <pubDate>Tue, 07 Jun 2022 16:02:20 +0800</pubDate>
-      
-      <guid>https://bobby-sheng.github.io/posts/fisrt-blog/</guid>
-      <description></description>
     </item>
     
     
