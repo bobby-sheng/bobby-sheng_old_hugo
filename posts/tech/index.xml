@@ -8,6 +8,15 @@
     <language>zh-cn</language>
     <lastBuildDate>Tue, 07 Jun 2022 16:15:04 +0800</lastBuildDate><atom:link href="https://bobby-sheng.github.io/posts/tech/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Python离线安装包地址</title>
+      <link>https://bobby-sheng.github.io/posts/tech/python%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E5%8C%85%E5%9C%B0%E5%9D%80/</link>
+      <pubDate>Wed, 15 Jun 2022 11:07:09 +0800</pubDate>
+      
+      <guid>https://bobby-sheng.github.io/posts/tech/python%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E5%8C%85%E5%9C%B0%E5%9D%80/</guid>
+      <description>1、py官方库 1 https://www.lfd.uci.edu/~gohlke/pythonlibs/ 2、pypc网站 1 https://pypi.org/project/ 3、py各大镜像库 1 2 3 4 5 6 https://pypi.tuna.tsinghua.edu.cn/simple http://mirrors.aliyun.com/pypi/simple/ http://pypi.douban.com/simple/ http://pypi.hustunique.com/ http://pypi.sdutlinux.org/ http://pypi.mirrors.ustc.edu.cn/</description>
+    </item>
+    
+    <item>
       <title>Hugo搭建手抄</title>
       <link>https://bobby-sheng.github.io/posts/tech/hugo%E6%90%AD%E5%BB%BA%E6%89%8B%E6%8A%84/</link>
       <pubDate>Tue, 07 Jun 2022 20:21:09 +0800</pubDate>
