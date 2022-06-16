@@ -13,7 +13,7 @@
       <pubDate>Thu, 16 Jun 2022 15:55:51 +0800</pubDate>
       
       <guid>https://bobby-sheng.github.io/posts/tech/github%E8%BF%9E%E6%8E%A5%E8%B6%85%E6%97%B6%E5%A4%84%E7%90%86/</guid>
-      <description>github连接超时处理 1、通过以下地址获取速度较快的ip作为映射地址(需要在本地可以ping通的) https://ping.chinaz.com/github.com 2、Windows系统配置 a.打开ho</description>
+      <description>1、通过以下地址获取速度较快的ip作为映射地址(需要在本地可以ping通的) https://ping.chinaz.com/github.com 2、Windows系统配置 a.打开host文件，路径一般是下面</description>
     </item>
     
     <item>
