@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://bobby-sheng.github.io/posts/tech/</loc>
+    <lastmod>2022-06-07T16:15:04+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://bobby-sheng.github.io/</loc>
     <lastmod>2022-06-16T16:56:57+08:00</lastmod>
   </url>
@@ -95,11 +100,6 @@
   <url>
     <loc>https://bobby-sheng.github.io/posts/blog/</loc>
     <lastmod>2022-06-07T16:18:07+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bobby-sheng.github.io/posts/tech/</loc>
-    <lastmod>2022-06-07T16:15:04+08:00</lastmod>
   </url>
   
   <url>
