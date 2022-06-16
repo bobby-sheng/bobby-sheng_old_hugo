@@ -6,7 +6,16 @@
     <description>Recent content on 张圣波&amp;博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 15 Jun 2022 11:07:09 +0800</lastBuildDate><atom:link href="https://bobby-sheng.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Jun 2022 15:55:51 +0800</lastBuildDate><atom:link href="https://bobby-sheng.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Github连接超时处理</title>
+      <link>https://bobby-sheng.github.io/posts/tech/github%E8%BF%9E%E6%8E%A5%E8%B6%85%E6%97%B6%E5%A4%84%E7%90%86/</link>
+      <pubDate>Thu, 16 Jun 2022 15:55:51 +0800</pubDate>
+      
+      <guid>https://bobby-sheng.github.io/posts/tech/github%E8%BF%9E%E6%8E%A5%E8%B6%85%E6%97%B6%E5%A4%84%E7%90%86/</guid>
+      <description>github连接超时处理 1、通过以下地址获取速度较快的ip作为映射地址(需要在本地可以ping通的) https://ping.chinaz.com/github.com 2、Windows系统配置 a.打开ho</description>
+    </item>
+    
     <item>
       <title>Python离线安装包地址</title>
       <link>https://bobby-sheng.github.io/posts/tech/python%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E5%8C%85%E5%9C%B0%E5%9D%80/</link>
