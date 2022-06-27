@@ -8,6 +8,15 @@
     <language>zh-cn</language>
     <lastBuildDate>Tue, 07 Jun 2022 16:15:04 +0800</lastBuildDate><atom:link href="https://bobby-sheng.github.io/posts/tech/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Docker命令大全</title>
+      <link>https://bobby-sheng.github.io/posts/tech/docker%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Mon, 27 Jun 2022 11:02:52 +0800</pubDate>
+      
+      <guid>https://bobby-sheng.github.io/posts/tech/docker%E5%91%BD%E4%BB%A4/</guid>
+      <description>docker主要分为镜像、容器。个人理解镜像是一个封装好的仓库，容器就是把这个仓库拿过来，里面的东西原封不动，可以随意操作而不会影响镜像内容</description>
+    </item>
+    
+    <item>
       <title>Github连接超时处理</title>
       <link>https://bobby-sheng.github.io/posts/tech/github%E8%BF%9E%E6%8E%A5%E8%B6%85%E6%97%B6%E5%A4%84%E7%90%86/</link>
       <pubDate>Thu, 16 Jun 2022 15:55:51 +0800</pubDate>
