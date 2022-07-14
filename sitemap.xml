@@ -8,22 +8,17 @@
   </url>
   
   <url>
-    <loc>https://bobby-sheng.github.io/tags/api/</loc>
+    <loc>https://bobby-sheng.github.io/tags/python/</loc>
     <lastmod>2022-07-14T14:48:59+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bobby-sheng.github.io/posts/tech/python-txt%E7%B1%BB%E5%9E%8B%E6%96%87%E6%A1%A3%E8%AF%BB%E5%86%99%E6%96%B9%E6%B3%95/</loc>
+    <loc>https://bobby-sheng.github.io/posts/tech/python%E6%96%87%E6%A1%A3%E8%AF%BB%E5%86%99%E6%96%B9%E6%B3%95/</loc>
     <lastmod>2022-07-14T14:48:59+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://bobby-sheng.github.io/tags/</loc>
-    <lastmod>2022-07-14T14:48:59+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bobby-sheng.github.io/tags/ui/</loc>
     <lastmod>2022-07-14T14:48:59+08:00</lastmod>
   </url>
   
@@ -73,6 +68,11 @@
   </url>
   
   <url>
+    <loc>https://bobby-sheng.github.io/tags/api/</loc>
+    <lastmod>2022-06-07T16:29:13+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://bobby-sheng.github.io/categories/</loc>
     <lastmod>2022-06-07T16:29:13+08:00</lastmod>
   </url>
@@ -84,6 +84,11 @@
   
   <url>
     <loc>https://bobby-sheng.github.io/categories/python/</loc>
+    <lastmod>2022-06-07T16:29:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bobby-sheng.github.io/tags/ui/</loc>
     <lastmod>2022-06-07T16:29:13+08:00</lastmod>
   </url>
   

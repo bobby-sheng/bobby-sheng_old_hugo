@@ -6,10 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>python文档读写方法 | 张圣波&amp;博客</title>
-<meta name="keywords" content="UI, API">
+<meta name="keywords" content="python">
 <meta name="description" content="一、文档读写实用方法 1、readline()函数 解释：此函数读取文件默认打印第一行，后面可以接参数打印字符个数 with open(p, &#39;rt&#39;) as f: rows = f.readline() print rows 2、rea">
 <meta name="author" content="bobby">
-<link rel="canonical" href="https://bobby-sheng.github.io/posts/tech/python-txt%E7%B1%BB%E5%9E%8B%E6%96%87%E6%A1%A3%E8%AF%BB%E5%86%99%E6%96%B9%E6%B3%95/">
+<link rel="canonical" href="https://bobby-sheng.github.io/posts/tech/python%E6%96%87%E6%A1%A3%E8%AF%BB%E5%86%99%E6%96%B9%E6%B3%95/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.1c05039c7f5f6d48ed1f2bb472103184bac9f68fa1ef83e4b2af21297060adf0.css" integrity="sha256-HAUDnH9fbUjtHyu0chAxhLrJ9o&#43;h74Pksq8hKXBgrfA=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
     onload="hljs.initHighlightingOnLoad();"></script>
@@ -72,7 +72,7 @@ if (!doNotTrack) {
 <meta property="og:title" content="python文档读写方法" />
 <meta property="og:description" content="一、文档读写实用方法 1、readline()函数 解释：此函数读取文件默认打印第一行，后面可以接参数打印字符个数 with open(p, &#39;rt&#39;) as f: rows = f.readline() print rows 2、rea" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://bobby-sheng.github.io/posts/tech/python-txt%E7%B1%BB%E5%9E%8B%E6%96%87%E6%A1%A3%E8%AF%BB%E5%86%99%E6%96%B9%E6%B3%95/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://bobby-sheng.github.io/posts/tech/python%E6%96%87%E6%A1%A3%E8%AF%BB%E5%86%99%E6%96%B9%E6%B3%95/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-07-14T14:48:59&#43;08:00" />
 <meta property="article:modified_time" content="2022-07-14T14:48:59&#43;08:00" />
 
@@ -102,7 +102,7 @@ if (!doNotTrack) {
       "@type": "ListItem",
       "position":  4 ,
       "name": "python文档读写方法",
-      "item": "https://bobby-sheng.github.io/posts/tech/python-txt%E7%B1%BB%E5%9E%8B%E6%96%87%E6%A1%A3%E8%AF%BB%E5%86%99%E6%96%B9%E6%B3%95/"
+      "item": "https://bobby-sheng.github.io/posts/tech/python%E6%96%87%E6%A1%A3%E8%AF%BB%E5%86%99%E6%96%B9%E6%B3%95/"
     }
   ]
 }
@@ -115,7 +115,7 @@ if (!doNotTrack) {
   "name": "python文档读写方法",
   "description": "一、文档读写实用方法 1、readline()函数 解释：此函数读取文件默认打印第一行，后面可以接参数打印字符个数 with open(p, \u0026#39;rt\u0026#39;) as f: rows = f.readline() print rows 2、rea",
   "keywords": [
-    "UI", "API"
+    "python"
   ],
   "articleBody": "一、文档读写实用方法 1、readline()函数\n解释：此函数读取文件默认打印第一行，后面可以接参数打印字符个数\nwith open(p, 'rt') as f: rows = f.readline() print rows 2、readlines()函数\nfile.readline()[index]\n解释：此函数把文件作列表全部读取出来，可通过for循环获取每一行的值\nwith open(p, 'rt') as f: rows = f.readlines() for i, line in enumerate(rows): print i 2、read()函数\n解释：此函数把文件样式原封不动的打印出来\nwith open(p, 'rt') as f: rows = f.read() print rows 二、打开文件模式解释 ### 常用模式打开文件 # 1.r模式 # 2.w模式:写入的文件不存在会自动创建，每一次写入都会覆盖前面的内容 # 3.a模式：与w模式一样，但是内容会追加 # 4.b模式：字节读取+字节写入 ### 其他模式模式 # 1.r+--打开文件用于读写，文件指针会放在文件开头 # 2.rb+--二进制打开文件用于读写，文件指针会放在文件开头 # 3.w+--打开文件用于读写，并且从头开始编辑，会覆盖原内容 # 4.wb+--二进制打开文件用于读写，并且从头开始编辑，会覆盖原内容 # 5.ab--二进制打开用于追加，指针放末尾，只能写 # 6.ab+--二进制打开文件用于追加，指针放末尾 # 7.a+--打开文件读写，指针放末尾，文件存在追加模式，不存在新建 三、文件读写案例 案例一\n解释：打开文件，获取文件所在行之后，赋值。在打开文件写入变量中的值\nwith open(p, 'rt') as f: rows = f.readlines() for i, line in enumerate(rows): if content[3] in line: a = i for k in range(a, a+60): if \"expect_return = \" in rows[k]: rows[k] = \" expect_return =\" + content[2] break log.info(\"写入\") with open(p, 'w+') as w: w.writelines(rows) 案例二\n解释：一次性打开多个文件，实现文件的快速拷贝。\nwith open('32.txt', 'rb') as fr, \\ open('35r.txt', 'wb') as fw: f.write(f.read()) 案例三\nimport os with open('37r.txt') as fr, \\ open('37r_swap.txt', 'w') as fw: data = fr.read() # 全部读入内存,如果文件很大,会很卡 data = data.replace('tank', 'tankSB') # 在内存中完成修改 fw.write(data) # 新文件一次性写入原文件内容 # 删除原文件 os.remove('37r.txt') # 重命名新文件名为原文件名 os.rename('37r_swap.txt', '37r.txt') print('done...') 案例四\nimport os with open('37r.txt') as fr,\\ open('37r_swap.txt', 'w') as fw: # 循环读取文件内容，逐行修改 for line in fr: line = line.replace('jason', 'jasonSB') # 新文件写入原文件修改后内容 fw.write(line) os.remove('37r.txt') os.rename('37r_swap.txt', '37r.txt') print('done...') 四、总结 修改文件内容的思路为：以读的方式打开原文件，以写的方式打开一个新的文件，把原文件的内容进行修改，然后写入新文件，之后利用os模块的方法，把原文件删除，重命名新文件为原文件名，达到以假乱真的目的\n",
   "wordCount" : "871",
@@ -128,7 +128,7 @@ if (!doNotTrack) {
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://bobby-sheng.github.io/posts/tech/python-txt%E7%B1%BB%E5%9E%8B%E6%96%87%E6%A1%A3%E8%AF%BB%E5%86%99%E6%96%B9%E6%B3%95/"
+    "@id": "https://bobby-sheng.github.io/posts/tech/python%E6%96%87%E6%A1%A3%E8%AF%BB%E5%86%99%E6%96%B9%E6%B3%95/"
   },
   "publisher": {
     "@type": "Organization",
@@ -400,8 +400,7 @@ os<span style="color:#f92672">.</span>rename(<span style="color:#e6db74">&#39;37
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://bobby-sheng.github.io/tags/ui/">UI</a></li>
-      <li><a href="https://bobby-sheng.github.io/tags/api/">API</a></li>
+      <li><a href="https://bobby-sheng.github.io/tags/python/">python</a></li>
     </ul>
 <nav class="paginav">
   <a class="next" href="https://bobby-sheng.github.io/posts/tech/docker%E5%91%BD%E4%BB%A4/">

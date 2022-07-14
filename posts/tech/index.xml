@@ -9,10 +9,10 @@
     <lastBuildDate>Tue, 07 Jun 2022 16:15:04 +0800</lastBuildDate><atom:link href="https://bobby-sheng.github.io/posts/tech/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>python文档读写方法</title>
-      <link>https://bobby-sheng.github.io/posts/tech/python-txt%E7%B1%BB%E5%9E%8B%E6%96%87%E6%A1%A3%E8%AF%BB%E5%86%99%E6%96%B9%E6%B3%95/</link>
+      <link>https://bobby-sheng.github.io/posts/tech/python%E6%96%87%E6%A1%A3%E8%AF%BB%E5%86%99%E6%96%B9%E6%B3%95/</link>
       <pubDate>Thu, 14 Jul 2022 14:48:59 +0800</pubDate>
       
-      <guid>https://bobby-sheng.github.io/posts/tech/python-txt%E7%B1%BB%E5%9E%8B%E6%96%87%E6%A1%A3%E8%AF%BB%E5%86%99%E6%96%B9%E6%B3%95/</guid>
+      <guid>https://bobby-sheng.github.io/posts/tech/python%E6%96%87%E6%A1%A3%E8%AF%BB%E5%86%99%E6%96%B9%E6%B3%95/</guid>
       <description>一、文档读写实用方法 1、readline()函数 解释：此函数读取文件默认打印第一行，后面可以接参数打印字符个数 with open(p, &amp;#39;rt&amp;#39;) as f: rows = f.readline() print rows 2、rea</description>
     </item>
     
