@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on 张圣波&amp;博客</title>
+    <link>https://bobby-sheng.github.io/tags/</link>
+    <description>Recent content in Tags on 张圣波&amp;博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 14 Jul 2022 14:48:59 +0800</lastBuildDate><atom:link href="https://bobby-sheng.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>API</title>
+      <link>https://bobby-sheng.github.io/tags/api/</link>
+      <pubDate>Thu, 14 Jul 2022 14:48:59 +0800</pubDate>
+      
+      <guid>https://bobby-sheng.github.io/tags/api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UI</title>
+      <link>https://bobby-sheng.github.io/tags/ui/</link>
+      <pubDate>Thu, 14 Jul 2022 14:48:59 +0800</pubDate>
+      
+      <guid>https://bobby-sheng.github.io/tags/ui/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://bobby-sheng.github.io/tags/docker/</link>
+      <pubDate>Mon, 27 Jun 2022 11:02:52 +0800</pubDate>
+      
+      <guid>https://bobby-sheng.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

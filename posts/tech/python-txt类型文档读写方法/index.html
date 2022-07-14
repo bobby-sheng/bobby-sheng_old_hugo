@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>python文档读写方法 | 张圣波&amp;博客</title>
+<meta name="keywords" content="UI, API">
+<meta name="description" content="一、文档读写实用方法 1、readline()函数 解释：此函数读取文件默认打印第一行，后面可以接参数打印字符个数 with open(p, &#39;rt&#39;) as f: rows = f.readline() print rows 2、rea">
+<meta name="author" content="bobby">
+<link rel="canonical" href="https://bobby-sheng.github.io/posts/tech/python-txt%E7%B1%BB%E5%9E%8B%E6%96%87%E6%A1%A3%E8%AF%BB%E5%86%99%E6%96%B9%E6%B3%95/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.1c05039c7f5f6d48ed1f2bb472103184bac9f68fa1ef83e4b2af21297060adf0.css" integrity="sha256-HAUDnH9fbUjtHyu0chAxhLrJ9o&#43;h74Pksq8hKXBgrfA=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://bobby-sheng.github.io/img/Q.gif">
+<link rel="icon" type="image/png" sizes="16x16" href="https://bobby-sheng.github.io/img/Q.gif">
+<link rel="icon" type="image/png" sizes="32x32" href="https://bobby-sheng.github.io/img/Q.gif">
+<link rel="apple-touch-icon" href="https://bobby-sheng.github.io/Q.git">
+<link rel="mask-icon" href="https://bobby-sheng.github.io/Q.git">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<meta property="og:title" content="python文档读写方法" />
+<meta property="og:description" content="一、文档读写实用方法 1、readline()函数 解释：此函数读取文件默认打印第一行，后面可以接参数打印字符个数 with open(p, &#39;rt&#39;) as f: rows = f.readline() print rows 2、rea" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bobby-sheng.github.io/posts/tech/python-txt%E7%B1%BB%E5%9E%8B%E6%96%87%E6%A1%A3%E8%AF%BB%E5%86%99%E6%96%B9%E6%B3%95/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-07-14T14:48:59&#43;08:00" />
+<meta property="article:modified_time" content="2022-07-14T14:48:59&#43;08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="python文档读写方法"/>
+<meta name="twitter:description" content="一、文档读写实用方法 1、readline()函数 解释：此函数读取文件默认打印第一行，后面可以接参数打印字符个数 with open(p, &#39;rt&#39;) as f: rows = f.readline() print rows 2、rea"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "文章",
+      "item": "https://bobby-sheng.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "笔记",
+      "item": "https://bobby-sheng.github.io/posts/tech/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  4 ,
+      "name": "python文档读写方法",
+      "item": "https://bobby-sheng.github.io/posts/tech/python-txt%E7%B1%BB%E5%9E%8B%E6%96%87%E6%A1%A3%E8%AF%BB%E5%86%99%E6%96%B9%E6%B3%95/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "python文档读写方法",
+  "name": "python文档读写方法",
+  "description": "一、文档读写实用方法 1、readline()函数 解释：此函数读取文件默认打印第一行，后面可以接参数打印字符个数 with open(p, \u0026#39;rt\u0026#39;) as f: rows = f.readline() print rows 2、rea",
+  "keywords": [
+    "UI", "API"
+  ],
+  "articleBody": "一、文档读写实用方法 1、readline()函数\n解释：此函数读取文件默认打印第一行，后面可以接参数打印字符个数\nwith open(p, 'rt') as f: rows = f.readline() print rows 2、readlines()函数\nfile.readline()[index]\n解释：此函数把文件作列表全部读取出来，可通过for循环获取每一行的值\nwith open(p, 'rt') as f: rows = f.readlines() for i, line in enumerate(rows): print i 2、read()函数\n解释：此函数把文件样式原封不动的打印出来\nwith open(p, 'rt') as f: rows = f.read() print rows 二、打开文件模式解释 ### 常用模式打开文件 # 1.r模式 # 2.w模式:写入的文件不存在会自动创建，每一次写入都会覆盖前面的内容 # 3.a模式：与w模式一样，但是内容会追加 # 4.b模式：字节读取+字节写入 ### 其他模式模式 # 1.r+--打开文件用于读写，文件指针会放在文件开头 # 2.rb+--二进制打开文件用于读写，文件指针会放在文件开头 # 3.w+--打开文件用于读写，并且从头开始编辑，会覆盖原内容 # 4.wb+--二进制打开文件用于读写，并且从头开始编辑，会覆盖原内容 # 5.ab--二进制打开用于追加，指针放末尾，只能写 # 6.ab+--二进制打开文件用于追加，指针放末尾 # 7.a+--打开文件读写，指针放末尾，文件存在追加模式，不存在新建 三、文件读写案例 案例一\n解释：打开文件，获取文件所在行之后，赋值。在打开文件写入变量中的值\nwith open(p, 'rt') as f: rows = f.readlines() for i, line in enumerate(rows): if content[3] in line: a = i for k in range(a, a+60): if \"expect_return = \" in rows[k]: rows[k] = \" expect_return =\" + content[2] break log.info(\"写入\") with open(p, 'w+') as w: w.writelines(rows) 案例二\n解释：一次性打开多个文件，实现文件的快速拷贝。\nwith open('32.txt', 'rb') as fr, \\ open('35r.txt', 'wb') as fw: f.write(f.read()) 案例三\nimport os with open('37r.txt') as fr, \\ open('37r_swap.txt', 'w') as fw: data = fr.read() # 全部读入内存,如果文件很大,会很卡 data = data.replace('tank', 'tankSB') # 在内存中完成修改 fw.write(data) # 新文件一次性写入原文件内容 # 删除原文件 os.remove('37r.txt') # 重命名新文件名为原文件名 os.rename('37r_swap.txt', '37r.txt') print('done...') 案例四\nimport os with open('37r.txt') as fr,\\ open('37r_swap.txt', 'w') as fw: # 循环读取文件内容，逐行修改 for line in fr: line = line.replace('jason', 'jasonSB') # 新文件写入原文件修改后内容 fw.write(line) os.remove('37r.txt') os.rename('37r_swap.txt', '37r.txt') print('done...') 四、总结 修改文件内容的思路为：以读的方式打开原文件，以写的方式打开一个新的文件，把原文件的内容进行修改，然后写入新文件，之后利用os模块的方法，把原文件删除，重命名新文件为原文件名，达到以假乱真的目的\n",
+  "wordCount" : "871",
+  "inLanguage": "en",
+  "datePublished": "2022-07-14T14:48:59+08:00",
+  "dateModified": "2022-07-14T14:48:59+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "bobby"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://bobby-sheng.github.io/posts/tech/python-txt%E7%B1%BB%E5%9E%8B%E6%96%87%E6%A1%A3%E8%AF%BB%E5%86%99%E6%96%B9%E6%B3%95/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "张圣波\u0026博客",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://bobby-sheng.github.io/img/Q.gif"
+    }
+  }
+}
+</script>
+
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://bobby-sheng.github.io" accesskey="h" title="张圣波&amp;博客 (Alt + H)">张圣波&amp;博客</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://bobby-sheng.github.io/search" title="🔍搜索 (Alt &#43; /)" accesskey=/>
+                    <span>🔍搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bobby-sheng.github.io/" title="🏠主页">
+                    <span>🏠主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bobby-sheng.github.io/posts" title="📚文章">
+                    <span>📚文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bobby-sheng.github.io/archives/" title="时间段">
+                    <span>时间段</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bobby-sheng.github.io/tags" title="🔖标签">
+                    <span>🔖标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bobby-sheng.github.io/about" title="🙋🏻‍♂️关于">
+                    <span>🙋🏻‍♂️关于</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://bobby-sheng.github.io">Home</a>&nbsp;»&nbsp;<a href="https://bobby-sheng.github.io/posts/">文章</a>&nbsp;»&nbsp;<a href="https://bobby-sheng.github.io/posts/tech/">笔记</a></div>
+    <h1 class="post-title">
+      python文档读写方法
+    </h1>
+    <div class="post-meta"><span title='2022-07-14 14:48:59 +0800 CST'>2022-07-14</span>&nbsp;·&nbsp;bobby
+
+</div>
+  </header> <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+            <summary accesskey="c" title="(Alt + C)">
+                <span class="details">Table of Contents</span>
+            </summary>
+
+            <div class="inner"><ul>
+                    <li>
+                        <a href="#%e4%b8%80%e6%96%87%e6%a1%a3%e8%af%bb%e5%86%99%e5%ae%9e%e7%94%a8%e6%96%b9%e6%b3%95" aria-label="一、文档读写实用方法">一、文档读写实用方法</a></li>
+                    <li>
+                        <a href="#%e4%ba%8c%e6%89%93%e5%bc%80%e6%96%87%e4%bb%b6%e6%a8%a1%e5%bc%8f%e8%a7%a3%e9%87%8a" aria-label="二、打开文件模式解释">二、打开文件模式解释</a></li>
+                    <li>
+                        <a href="#%e4%b8%89%e6%96%87%e4%bb%b6%e8%af%bb%e5%86%99%e6%a1%88%e4%be%8b" aria-label="三、文件读写案例">三、文件读写案例</a></li>
+                    <li>
+                        <a href="#%e5%9b%9b%e6%80%bb%e7%bb%93" aria-label="四、总结">四、总结</a>
+                    </li>
+                </ul>
+            </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+         
+         activeElement = elements[0];
+         const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+         document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+     }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 && 
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+             const id = encodeURI(element.getAttribute('id')).toLowerCase();
+             if (element === activeElement){
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+             } else {
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+             }
+         })
+     }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;   
+    }
+</script>
+
+  <div class="post-content"><h3 id="一文档读写实用方法">一、文档读写实用方法<a hidden class="anchor" aria-hidden="true" href="#一文档读写实用方法">#</a></h3>
+<p><strong>1、readline()函数</strong></p>
+<p>解释：此函数读取文件默认打印第一行，后面可以接参数打印字符个数</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">with</span> open(p, <span style="color:#e6db74">&#39;rt&#39;</span>) <span style="color:#66d9ef">as</span> f:
+    rows <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>readline()
+    <span style="color:#66d9ef">print</span> rows
+</code></pre></div><p><strong>2、readlines()函数</strong></p>
+<p>file.readline()[index]</p>
+<p>解释：此函数把文件作列表全部读取出来，可通过for循环获取每一行的值</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">with</span> open(p, <span style="color:#e6db74">&#39;rt&#39;</span>) <span style="color:#66d9ef">as</span> f:
+    rows <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>readlines()
+    <span style="color:#66d9ef">for</span> i, line <span style="color:#f92672">in</span> enumerate(rows):
+        <span style="color:#66d9ef">print</span> i
+</code></pre></div><p><strong>2、read()函数</strong></p>
+<p>解释：此函数把文件样式原封不动的打印出来</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">with</span> open(p, <span style="color:#e6db74">&#39;rt&#39;</span>) <span style="color:#66d9ef">as</span> f:
+    rows <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>read()
+    <span style="color:#66d9ef">print</span> rows
+</code></pre></div><h3 id="二打开文件模式解释">二、打开文件模式解释<a hidden class="anchor" aria-hidden="true" href="#二打开文件模式解释">#</a></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">### 常用模式打开文件</span>
+<span style="color:#75715e"># 1.r模式</span>
+<span style="color:#75715e"># 2.w模式:写入的文件不存在会自动创建，每一次写入都会覆盖前面的内容</span>
+<span style="color:#75715e"># 3.a模式：与w模式一样，但是内容会追加</span>
+<span style="color:#75715e"># 4.b模式：字节读取+字节写入</span>
+
+<span style="color:#75715e">### 其他模式模式</span>
+<span style="color:#75715e"># 1.r+--打开文件用于读写，文件指针会放在文件开头</span>
+<span style="color:#75715e"># 2.rb+--二进制打开文件用于读写，文件指针会放在文件开头</span>
+<span style="color:#75715e"># 3.w+--打开文件用于读写，并且从头开始编辑，会覆盖原内容</span>
+<span style="color:#75715e"># 4.wb+--二进制打开文件用于读写，并且从头开始编辑，会覆盖原内容</span>
+<span style="color:#75715e"># 5.ab--二进制打开用于追加，指针放末尾，只能写</span>
+<span style="color:#75715e"># 6.ab+--二进制打开文件用于追加，指针放末尾</span>
+<span style="color:#75715e"># 7.a+--打开文件读写，指针放末尾，文件存在追加模式，不存在新建</span>
+</code></pre></div><h3 id="三文件读写案例">三、文件读写案例<a hidden class="anchor" aria-hidden="true" href="#三文件读写案例">#</a></h3>
+<p><strong>案例一</strong></p>
+<p>解释：打开文件，获取文件所在行之后，赋值。在打开文件写入变量中的值</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">with</span> open(p, <span style="color:#e6db74">&#39;rt&#39;</span>) <span style="color:#66d9ef">as</span> f:
+    rows <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>readlines()
+    <span style="color:#66d9ef">for</span> i, line <span style="color:#f92672">in</span> enumerate(rows):
+        <span style="color:#66d9ef">if</span> content[<span style="color:#ae81ff">3</span>] <span style="color:#f92672">in</span> line:
+            a <span style="color:#f92672">=</span> i
+            <span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(a, a<span style="color:#f92672">+</span><span style="color:#ae81ff">60</span>):
+                <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;expect_return = &#34;</span> <span style="color:#f92672">in</span> rows[k]:
+                    rows[k] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;        expect_return =&#34;</span> <span style="color:#f92672">+</span> content[<span style="color:#ae81ff">2</span>]
+                    <span style="color:#66d9ef">break</span>
+log<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#34;写入&#34;</span>)
+<span style="color:#66d9ef">with</span> open(p, <span style="color:#e6db74">&#39;w+&#39;</span>) <span style="color:#66d9ef">as</span> w:
+	w<span style="color:#f92672">.</span>writelines(rows)                    
+        
+</code></pre></div><p><strong>案例二</strong></p>
+<p>解释：一次性打开多个文件，实现文件的快速拷贝。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;32.txt&#39;</span>, <span style="color:#e6db74">&#39;rb&#39;</span>) <span style="color:#66d9ef">as</span> fr, \
+        open(<span style="color:#e6db74">&#39;35r.txt&#39;</span>, <span style="color:#e6db74">&#39;wb&#39;</span>) <span style="color:#66d9ef">as</span> fw:
+    f<span style="color:#f92672">.</span>write(f<span style="color:#f92672">.</span>read())
+</code></pre></div><p><strong>案例三</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> os
+
+<span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;37r.txt&#39;</span>) <span style="color:#66d9ef">as</span> fr, \
+        open(<span style="color:#e6db74">&#39;37r_swap.txt&#39;</span>, <span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> fw:
+    data <span style="color:#f92672">=</span> fr<span style="color:#f92672">.</span>read()  <span style="color:#75715e"># 全部读入内存,如果文件很大,会很卡</span>
+    data <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;tank&#39;</span>, <span style="color:#e6db74">&#39;tankSB&#39;</span>)  <span style="color:#75715e"># 在内存中完成修改</span>
+
+    fw<span style="color:#f92672">.</span>write(data)  <span style="color:#75715e"># 新文件一次性写入原文件内容</span>
+
+<span style="color:#75715e"># 删除原文件</span>
+os<span style="color:#f92672">.</span>remove(<span style="color:#e6db74">&#39;37r.txt&#39;</span>)
+<span style="color:#75715e"># 重命名新文件名为原文件名</span>
+os<span style="color:#f92672">.</span>rename(<span style="color:#e6db74">&#39;37r_swap.txt&#39;</span>, <span style="color:#e6db74">&#39;37r.txt&#39;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;done...&#39;</span>)
+</code></pre></div><p><strong>案例四</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> os
+
+<span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;37r.txt&#39;</span>) <span style="color:#66d9ef">as</span> fr,\
+        open(<span style="color:#e6db74">&#39;37r_swap.txt&#39;</span>, <span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> fw:
+    <span style="color:#75715e"># 循环读取文件内容，逐行修改</span>
+    <span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> fr:
+        line <span style="color:#f92672">=</span> line<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;jason&#39;</span>, <span style="color:#e6db74">&#39;jasonSB&#39;</span>)
+        <span style="color:#75715e"># 新文件写入原文件修改后内容</span>
+        fw<span style="color:#f92672">.</span>write(line)
+
+os<span style="color:#f92672">.</span>remove(<span style="color:#e6db74">&#39;37r.txt&#39;</span>)
+os<span style="color:#f92672">.</span>rename(<span style="color:#e6db74">&#39;37r_swap.txt&#39;</span>, <span style="color:#e6db74">&#39;37r.txt&#39;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;done...&#39;</span>)
+</code></pre></div><h3 id="四总结">四、总结<a hidden class="anchor" aria-hidden="true" href="#四总结">#</a></h3>
+<p>修改文件内容的思路为：以读的方式打开原文件，以写的方式打开一个新的文件，把原文件的内容进行修改，然后写入新文件，之后利用os模块的方法，把原文件删除，重命名新文件为原文件名，达到以假乱真的目的</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://bobby-sheng.github.io/tags/ui/">UI</a></li>
+      <li><a href="https://bobby-sheng.github.io/tags/api/">API</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://bobby-sheng.github.io/posts/tech/docker%E5%91%BD%E4%BB%A4/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Docker命令大全</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://bobby-sheng.github.io">张圣波&amp;博客</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
