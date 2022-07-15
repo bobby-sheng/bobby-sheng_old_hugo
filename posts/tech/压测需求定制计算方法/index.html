@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>压测需求定制计算方法 | 张圣波&amp;博客</title>
+<meta name="keywords" content="jmeter">
+<meta name="description" content="1、普通计算方法 计算公式：TPS= 总请求数 / 总时间 按照需求所示，在2019年第32周，有4.13万的浏览量，那么总请求数，我们可以认为估算为">
+<meta name="author" content="bobby">
+<link rel="canonical" href="https://bobby-sheng.github.io/posts/tech/%E5%8E%8B%E6%B5%8B%E9%9C%80%E6%B1%82%E5%AE%9A%E5%88%B6%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.1c05039c7f5f6d48ed1f2bb472103184bac9f68fa1ef83e4b2af21297060adf0.css" integrity="sha256-HAUDnH9fbUjtHyu0chAxhLrJ9o&#43;h74Pksq8hKXBgrfA=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://bobby-sheng.github.io/img/Q.gif">
+<link rel="icon" type="image/png" sizes="16x16" href="https://bobby-sheng.github.io/img/Q.gif">
+<link rel="icon" type="image/png" sizes="32x32" href="https://bobby-sheng.github.io/img/Q.gif">
+<link rel="apple-touch-icon" href="https://bobby-sheng.github.io/Q.git">
+<link rel="mask-icon" href="https://bobby-sheng.github.io/Q.git">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<meta property="og:title" content="压测需求定制计算方法" />
+<meta property="og:description" content="1、普通计算方法 计算公式：TPS= 总请求数 / 总时间 按照需求所示，在2019年第32周，有4.13万的浏览量，那么总请求数，我们可以认为估算为" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bobby-sheng.github.io/posts/tech/%E5%8E%8B%E6%B5%8B%E9%9C%80%E6%B1%82%E5%AE%9A%E5%88%B6%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-07-15T10:39:52&#43;08:00" />
+<meta property="article:modified_time" content="2022-07-15T10:39:52&#43;08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="压测需求定制计算方法"/>
+<meta name="twitter:description" content="1、普通计算方法 计算公式：TPS= 总请求数 / 总时间 按照需求所示，在2019年第32周，有4.13万的浏览量，那么总请求数，我们可以认为估算为"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "文章",
+      "item": "https://bobby-sheng.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "笔记",
+      "item": "https://bobby-sheng.github.io/posts/tech/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  4 ,
+      "name": "压测需求定制计算方法",
+      "item": "https://bobby-sheng.github.io/posts/tech/%E5%8E%8B%E6%B5%8B%E9%9C%80%E6%B1%82%E5%AE%9A%E5%88%B6%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "压测需求定制计算方法",
+  "name": "压测需求定制计算方法",
+  "description": "1、普通计算方法 计算公式：TPS= 总请求数 / 总时间 按照需求所示，在2019年第32周，有4.13万的浏览量，那么总请求数，我们可以认为估算为",
+  "keywords": [
+    "jmeter"
+  ],
+  "articleBody": "1、普通计算方法 计算公式：TPS= 总请求数 / 总时间 按照需求所示，在2019年第32周，有4.13万的浏览量，那么总请求数，我们可以认为估算为4.13万（1次浏览都至少对应1个请求） 总请求数 = 4.13 万请求数 = 41300 请求数 总时间：由于不知道每个请求的具体时间，我们按照普通方法，我们可以按照一周的时间进行计算，总时间 = 1天 = 1 * 24 小时 = 24 * 3600 秒 套入公式可得：TPS = 41300请求数/24*3600秒 = 0.48请求数/秒 结论：按照普通计算方法，我们在测试环境对相同的系统进行性能测试时，每秒能够发送0.48请求就可以满足线上的需要 2、二八原则计算方法 二八原则就是指80%的请求在20%的时间内完成 计算公式 ： TPS = 总请求数 80% / (总时间20%) **按照公式进行计算：TPS = 41300 * 0.8请求数 / 24*3600*0.2秒 = 1.91 请求数/秒 **结论：**按照二八原则计算，在测试环境我们的TPS只要能达到1.91请求数每秒就能满足线上需要。二八原则的估算结果会比平均值的计算方法更能满足用户需求。 3、照业务数据进行计算 计算模拟用户正常业务操作（稳定性测试）的并发量： 根据这些数据统计图，可以得出结论： 大部分订单在8点-24点之间，因此系统的有效工作时长为16个小时 从订单数量统计，8-24点之间的订单占一天总订单的98%左右（40474个） 结合二八原则计算公式 ： TPS = 总请求数 80% / (总时间20%) 需要在测试环境模拟用户正常业务操作（稳定性测试）的并发量为：TPS = 40474 * 0.8请求数 / 16*3600*0.2秒 = 2.81 请求数/秒 计算模拟用户峰值业务操作（压力测试）的并发量： 根据这些数据统计图，可以得出结论： 订单最高峰在在21点-22点之间，一小时的订单总数大约为8853个 计算压力测试的并发数：TPS = 峰值请求数/峰值时间 * 系数 需要在测试环境模拟用户峰值业务操作（压力测试）的并发量为： TPS = 8853 请求数 / 3600秒 * 3（系数） = 7.38 请求数/秒 ",
+  "wordCount" : "800",
+  "inLanguage": "en",
+  "datePublished": "2022-07-15T10:39:52+08:00",
+  "dateModified": "2022-07-15T10:39:52+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "bobby"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://bobby-sheng.github.io/posts/tech/%E5%8E%8B%E6%B5%8B%E9%9C%80%E6%B1%82%E5%AE%9A%E5%88%B6%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "张圣波\u0026博客",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://bobby-sheng.github.io/img/Q.gif"
+    }
+  }
+}
+</script>
+
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://bobby-sheng.github.io" accesskey="h" title="张圣波&amp;博客 (Alt + H)">张圣波&amp;博客</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://bobby-sheng.github.io/search" title="🔍搜索 (Alt &#43; /)" accesskey=/>
+                    <span>🔍搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bobby-sheng.github.io/" title="🏠主页">
+                    <span>🏠主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bobby-sheng.github.io/posts" title="📚文章">
+                    <span>📚文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bobby-sheng.github.io/archives/" title="时间段">
+                    <span>时间段</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bobby-sheng.github.io/tags" title="🔖标签">
+                    <span>🔖标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bobby-sheng.github.io/about" title="🙋🏻‍♂️关于">
+                    <span>🙋🏻‍♂️关于</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://bobby-sheng.github.io">Home</a>&nbsp;»&nbsp;<a href="https://bobby-sheng.github.io/posts/">文章</a>&nbsp;»&nbsp;<a href="https://bobby-sheng.github.io/posts/tech/">笔记</a></div>
+    <h1 class="post-title">
+      压测需求定制计算方法
+    </h1>
+    <div class="post-meta"><span title='2022-07-15 10:39:52 +0800 CST'>2022-07-15</span>&nbsp;·&nbsp;bobby
+
+</div>
+  </header> <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+            <summary accesskey="c" title="(Alt + C)">
+                <span class="details">Table of Contents</span>
+            </summary>
+
+            <div class="inner"><ul>
+                    <li>
+                        <a href="#1%e6%99%ae%e9%80%9a%e8%ae%a1%e7%ae%97%e6%96%b9%e6%b3%95" aria-label="1、普通计算方法">1、普通计算方法</a></li>
+                    <li>
+                        <a href="#2%e4%ba%8c%e5%85%ab%e5%8e%9f%e5%88%99%e8%ae%a1%e7%ae%97%e6%96%b9%e6%b3%95" aria-label="2、二八原则计算方法">2、二八原则计算方法</a></li>
+                    <li>
+                        <a href="#3%e7%85%a7%e4%b8%9a%e5%8a%a1%e6%95%b0%e6%8d%ae%e8%bf%9b%e8%a1%8c%e8%ae%a1%e7%ae%97" aria-label="3、照业务数据进行计算">3、照业务数据进行计算</a>
+                    </li>
+                </ul>
+            </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+         
+         activeElement = elements[0];
+         const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+         document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+     }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 && 
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+             const id = encodeURI(element.getAttribute('id')).toLowerCase();
+             if (element === activeElement){
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+             } else {
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+             }
+         })
+     }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;   
+    }
+</script>
+
+  <div class="post-content"><h3 id="1普通计算方法">1、普通计算方法<a hidden class="anchor" aria-hidden="true" href="#1普通计算方法">#</a></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">计算公式：TPS<span style="color:#f92672">=</span> 总请求数 / 总时间
+按照需求所示，在2019年第32周，有4.13万的浏览量，那么总请求数，我们可以认为估算为4.13万（1次浏览都至少对应1个请求）
+总请求数 <span style="color:#f92672">=</span> 4.13 万请求数 <span style="color:#f92672">=</span> <span style="color:#ae81ff">41300</span> 请求数
+总时间：由于不知道每个请求的具体时间，我们按照普通方法，我们可以按照一周的时间进行计算，总时间 <span style="color:#f92672">=</span> 1天 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> * <span style="color:#ae81ff">24</span> 小时 <span style="color:#f92672">=</span> <span style="color:#ae81ff">24</span> * <span style="color:#ae81ff">3600</span> 秒
+套入公式可得：TPS <span style="color:#f92672">=</span> 41300请求数/24*3600秒 <span style="color:#f92672">=</span> 0.48请求数/秒
+结论：按照普通计算方法，我们在测试环境对相同的系统进行性能测试时，每秒能够发送0.48请求就可以满足线上的需要
+</code></pre></div><h3 id="2二八原则计算方法">2、二八原则计算方法<a hidden class="anchor" aria-hidden="true" href="#2二八原则计算方法">#</a></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">二八原则就是指80%的请求在20%的时间内完成
+计算公式 ： TPS <span style="color:#f92672">=</span> 总请求数 80% / <span style="color:#f92672">(</span>总时间20%<span style="color:#f92672">)</span>
+**按照公式进行计算：TPS <span style="color:#f92672">=</span> <span style="color:#ae81ff">41300</span> * 0.8请求数 / 24*3600*0.2秒 <span style="color:#f92672">=</span> 1.91 请求数/秒
+**结论：**按照二八原则计算，在测试环境我们的TPS只要能达到1.91请求数每秒就能满足线上需要。二八原则的估算结果会比平均值的计算方法更能满足用户需求。
+</code></pre></div><h3 id="3照业务数据进行计算">3、照业务数据进行计算<a hidden class="anchor" aria-hidden="true" href="#3照业务数据进行计算">#</a></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">计算模拟用户正常业务操作（稳定性测试）的并发量：
+根据这些数据统计图，可以得出结论：
+大部分订单在8点-24点之间，因此系统的有效工作时长为16个小时
+从订单数量统计，8-24点之间的订单占一天总订单的98%左右（40474个）
+结合二八原则计算公式 ： TPS <span style="color:#f92672">=</span> 总请求数 80% / <span style="color:#f92672">(</span>总时间20%<span style="color:#f92672">)</span>
+需要在测试环境模拟用户正常业务操作（稳定性测试）的并发量为：TPS <span style="color:#f92672">=</span> <span style="color:#ae81ff">40474</span> * 0.8请求数 / 16*3600*0.2秒 <span style="color:#f92672">=</span> 2.81 请求数/秒
+计算模拟用户峰值业务操作（压力测试）的并发量：
+根据这些数据统计图，可以得出结论：
+订单最高峰在在21点-22点之间，一小时的订单总数大约为8853个
+计算压力测试的并发数：TPS <span style="color:#f92672">=</span> 峰值请求数/峰值时间 * 系数
+需要在测试环境模拟用户峰值业务操作（压力测试）的并发量为：
+
+TPS <span style="color:#f92672">=</span> <span style="color:#ae81ff">8853</span> 请求数 / 3600秒 * 3（系数） <span style="color:#f92672">=</span> 7.38 请求数/秒
+</code></pre></div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://bobby-sheng.github.io/tags/jmeter/">jmeter</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://bobby-sheng.github.io/posts/tech/python%E6%96%87%E6%A1%A3%E8%AF%BB%E5%86%99%E6%96%B9%E6%B3%95/">
+    <span class="title">Next »</span>
+    <br>
+    <span>python文档读写方法</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://bobby-sheng.github.io">张圣波&amp;博客</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
