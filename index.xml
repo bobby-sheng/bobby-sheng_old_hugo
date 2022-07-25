@@ -6,14 +6,23 @@
     <description>Recent content on 张圣波&amp;博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 21 Jul 2022 20:39:11 +0800</lastBuildDate><atom:link href="https://bobby-sheng.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Jul 2022 16:16:09 +0800</lastBuildDate><atom:link href="https://bobby-sheng.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python字符串详解</title>
+      <link>https://bobby-sheng.github.io/posts/tech/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%AF%A6%E8%A7%A3/</link>
+      <pubDate>Mon, 25 Jul 2022 16:16:09 +0800</pubDate>
+      
+      <guid>https://bobby-sheng.github.io/posts/tech/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%AF%A6%E8%A7%A3/</guid>
+      <description>一、字符串常用方法 1、索引-str[0] #从0开始 msg=&amp;#34;bobby&amp;#34; #b print msg[0] 2、切片-str[:::] # 索引切片 msg = &amp;#39;hello nick&amp;#39; # 0123456789 # 索引序号 print(f&amp;#39;</description>
+    </item>
+    
     <item>
       <title>Python列表方法详解</title>
       <link>https://bobby-sheng.github.io/posts/tech/python%E5%88%97%E8%A1%A8%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3/</link>
       <pubDate>Thu, 21 Jul 2022 20:39:11 +0800</pubDate>
       
       <guid>https://bobby-sheng.github.io/posts/tech/python%E5%88%97%E8%A1%A8%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3/</guid>
-      <description>一、列表常用方法 1、索引取值-list[index] 按索引取值（正向取值+反向取值），即可存也可以取 # list之索引取值 name_list = [&amp;#39;nick&amp;#39;, &amp;#39;jason&amp;#39;, &amp;#39;tank&amp;#39;, &amp;#39;sean&amp;#39;] name_list[0] = &amp;#39;nick handsom&amp;#39;</description>
+      <description>笔记背景 好记性不如烂笔头，在需要的时经常断片忘记基础方法，写这笔记目的一是加深印象，二是实在记不得也不需要去外网寻找找影响效率。 一、列表常用</description>
     </item>
     
     <item>
