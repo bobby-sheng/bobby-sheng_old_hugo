@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Python字典详解 | 张圣波&amp;博客</title>
+<meta name="keywords" content="python">
+<meta name="description" content="一、字典常用方法 字典是Python中重要的数据类型，字典是由&quot;键-值&quot;对组成的集合，&ldquo;键-值&quot;对之">
+<meta name="author" content="bobby">
+<link rel="canonical" href="https://bobby-sheng.github.io/posts/tech/python%E5%AD%97%E5%85%B8%E8%AF%A6%E8%A7%A3/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.1c05039c7f5f6d48ed1f2bb472103184bac9f68fa1ef83e4b2af21297060adf0.css" integrity="sha256-HAUDnH9fbUjtHyu0chAxhLrJ9o&#43;h74Pksq8hKXBgrfA=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://bobby-sheng.github.io/img/Q.gif">
+<link rel="icon" type="image/png" sizes="16x16" href="https://bobby-sheng.github.io/img/Q.gif">
+<link rel="icon" type="image/png" sizes="32x32" href="https://bobby-sheng.github.io/img/Q.gif">
+<link rel="apple-touch-icon" href="https://bobby-sheng.github.io/Q.git">
+<link rel="mask-icon" href="https://bobby-sheng.github.io/Q.git">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<meta property="og:title" content="Python字典详解" />
+<meta property="og:description" content="一、字典常用方法 字典是Python中重要的数据类型，字典是由&quot;键-值&quot;对组成的集合，&ldquo;键-值&quot;对之" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bobby-sheng.github.io/posts/tech/python%E5%AD%97%E5%85%B8%E8%AF%A6%E8%A7%A3/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-07-26T20:52:02&#43;08:00" />
+<meta property="article:modified_time" content="2022-07-26T20:52:02&#43;08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Python字典详解"/>
+<meta name="twitter:description" content="一、字典常用方法 字典是Python中重要的数据类型，字典是由&quot;键-值&quot;对组成的集合，&ldquo;键-值&quot;对之"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "文章",
+      "item": "https://bobby-sheng.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "笔记",
+      "item": "https://bobby-sheng.github.io/posts/tech/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  4 ,
+      "name": "Python字典详解",
+      "item": "https://bobby-sheng.github.io/posts/tech/python%E5%AD%97%E5%85%B8%E8%AF%A6%E8%A7%A3/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Python字典详解",
+  "name": "Python字典详解",
+  "description": "一、字典常用方法 字典是Python中重要的数据类型，字典是由\u0026quot;键-值\u0026quot;对组成的集合，\u0026ldquo;键-值\u0026quot;对之",
+  "keywords": [
+    "python"
+  ],
+  "articleBody": "一、字典常用方法 字典是Python中重要的数据类型，字典是由\"键-值\"对组成的集合，“键-值\"对之间用逗号隔开，包含在一对花括号中。字典中的\"值\"通过\"键\"来引用。\n1、定义 #第一种 bobby = {1: 'a', 0: 'b'} print bobby #{1: 'a', 0: 'b'} #第二种 bobby = dict{1 = \"a\",0 = \"b\"} print bobby #{1: 'a', 0: 'b'} 2、2种获取字典的value方法 2.1、第二种-dict[key] 通过key值获取相应的value值\nbobby = {1: 'a', 0: 'b'} print bobby[1] #a 2.1、第一种-dict.get(key[,default_value]) 参数key表示字典的键值，参数default_value可以作为get()的返回值，默认值为None。如果指定default_value参数值，表示如果参数key键值在字典key列表中，则返回对应的value值，如果不在，则返回预先设定的default_value的值\n# default_value参数可以作为未找到value的返回值，默认返回空 bobby = {1: 'a', 0: 'b'} #有值情况返回值 print bobby.get(1, \"ppp\") #a #无值情况返回自定义值 print bobby.get(4, \"ppp\") #ppp #无自定义值且找不到值的情况默认返回空 print bobby.get(4) #None 3、2种添加字典元素方法 3.1、第一种–dict[key] = value 如果键值key不在字典dict的key列表中，字典dict添加（key：value）的记录。如果已经在key列表中，则修改键值key对应的value值\nbobby = {1: 'a', 0: 'b'} bobby[3] = \"c\" print bobby #{0: 'b', 1: 'a', 3: 'c'} #如果已经在key列表中，则修改键值key对应的value值。 bobby[1] = \"c\" print bobby #{0: 'b', 1: 'c'} 3.2、第二种-dict.setdefault(key[,default_value]) 如果索引key在字典key列表中，则返回对应的value值，如果不在key列表中，则添加新索引key和value在字典中，并反馈default_value值，默认值 为None\n#当key存在时，会返回存在的velue，并且不修改 bobby = {1: 'a', 0: 'b'} print bobby.setdefault(1) #a print bobby #{1: 'a', 0: 'b'} #当key不存在时，则添加新索引key和value在字典中，并反馈 bobby = {1: 'a', 0: 'b'} print bobby.setdefault(4，\"c\") #c print bobby #{1: 'a', 0: 'b',4:'c'} #当key不存在时，default_value为空，默认填入null bobby = {1: 'a', 0: 'b'} print bobby.setdefault(4) #null print bobby #{1: 'a', 0: 'b',4:'null'} 4、获取字典所有keys、Values或者key-valu键值对 #获取字典的所有\"键\"-\"值\"元素。通过调用字典的items()方法实现，返回的是(key,value)元组组成的列表 #python2中取出的是列表（鸡蛋）；python3中取出的是元组（鸡） bobby = {1: 'a', 0: 'b'} print bobby.items() #[(0, 'b'), (1, 'a')] #获取所有key,返回列表 bobby = {1: 'a', 0: 'b'} print bobby.key() #[0, 1] #获取所有Values,返回列表 bobby = {1: 'a', 0: 'b'} print bobby.Values() #['b', 'a'] 5、循环 # dic之循环 # dic是无序的，但是python3采用了底层优化算法，所以看起来是有序的，但是python2中的字典是无序 bobby = {1: 'a', 0: 'b'} for k, v in bobby.items(): print(k, v) #(0, 'b') (1, 'a') # items可以换成keys()、values() 6、3种删除字典内容方法 6.1 第一种-del dict[key] #调用py内置方法del bobby = {1: 'a', 0: 'b'} del bobby[1] print bobby #{0: 'b'} 6.2 第二种-dict.pop(key[,default_value]) pop()函数必须指定参数索引key才能删除对应的值。如果索引key在字典key列表中，则返回索引key对应的value值。如果不存在，则返回预先设置的default_value值，如果未设置，会爬出KeyError异常信息\n#索引key在字典key列表中，则返回索引key对应的value值 bobby = {1: 'a', 0: 'b'} print bobby.pop(1) #a print bobby #{0: 'b'} #索引key不在字典key列表中，未设置返回值，会直接报错 bobby = {1: 'a', 0: 'b'} print bobby.pop(3) #KeyError: 3 #索引key在字典key列表中，设置返回值，会返回设置值或者提示 bobby = {1: 'a', 0: 'b'} print bobby.pop(3,\"null\") #null print bobby {0: 'b', 1: 'a'} 6.3 第三种-dict.clear() #调用py内置方法del bobby = {1: 'a', 0: 'b'} bobby.clear() print bobby #{} 7、字典为多个key设置值-fromkeys([key,],values) # dic之fromkeys() dic = dict.fromkeys(['name', 'age', 'sex'], None) print dic #{'name': None, 'age': None, 'sex': None} 8、两个字典合并-dic1.update(dic2) # dic之update() dic1 = {'a': 1, 'b': 2} dic2 = {'c': 3} dic1.update(dic2) print(dic1) #dic1: {'a': 1, 'b': 2, 'c': 3} 9、字典排序-sorted() dict = {'2':\"Python\",'1':\"Java\",'3':\"C++\"} sorted(dict.items(),key=lambda d:d[0]) #[('1', 'Java'), ('2', 'Python'), ('3', 'C++')] sorted(dict.items(),key=lambda d:d[1]) #[('3', 'C++'), ('1', 'Java'), ('2', 'Python')] #也可以使用如下方法对值进行排序，先使用zip进行反转 sorted(zip(prices.values(),prices.keys())) #[(10.75, 'FB'), (37.2, 'HPQ'), (45.23, 'ACME'), #(205.55, 'IBM'), (612.78, 'AAPL')] #说明:如果存在values相同的情况下，则会按照key的大小进行排序。如下： prices = {'ACME': 45.23, 'AAPL': 612.78, 'IBM': #612.78, 'HPQ': 37.20,'FB': 10.75 } sorted(zip(prices.values(),prices.keys())) #[(10.75, 'FB'), (37.2, 'HPQ'), (45.23, 'ACME'), (612.78, 'AAPL'), (612.78, 'IBM')] 10、成员运算in和not in # dic之成员运算in和not in,只会判断key是否存在 dic = {'a': 1, 'b': 2} print('a' in dic) #True print(1 in dic) #False 11、获取字典相同元素 #获取两个字典相同的键、值或者items。可以通过集合运算的方式获取。 dic_a = {'x':1,'y':2,'z':3} dic_b = {'w':10,'x':11,'y':2} dic_a.keys() \u0026 dic_b.keys() #{'x', 'y'} dic_a.keys() - dic_b.keys() #{'z'} dic_a.items() \u0026 dic_a.items() #{('z', 3), ('x', 1), ('y', 2)} ",
+  "wordCount" : "2010",
+  "inLanguage": "en",
+  "datePublished": "2022-07-26T20:52:02+08:00",
+  "dateModified": "2022-07-26T20:52:02+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "bobby"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://bobby-sheng.github.io/posts/tech/python%E5%AD%97%E5%85%B8%E8%AF%A6%E8%A7%A3/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "张圣波\u0026博客",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://bobby-sheng.github.io/img/Q.gif"
+    }
+  }
+}
+</script>
+
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://bobby-sheng.github.io" accesskey="h" title="张圣波&amp;博客 (Alt + H)">张圣波&amp;博客</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://bobby-sheng.github.io/search" title="🔍搜索 (Alt &#43; /)" accesskey=/>
+                    <span>🔍搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bobby-sheng.github.io/" title="🏠主页">
+                    <span>🏠主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bobby-sheng.github.io/posts" title="📚文章">
+                    <span>📚文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bobby-sheng.github.io/archives/" title="时间段">
+                    <span>时间段</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bobby-sheng.github.io/tags" title="🔖标签">
+                    <span>🔖标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bobby-sheng.github.io/about" title="🙋🏻‍♂️关于">
+                    <span>🙋🏻‍♂️关于</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://bobby-sheng.github.io">Home</a>&nbsp;»&nbsp;<a href="https://bobby-sheng.github.io/posts/">文章</a>&nbsp;»&nbsp;<a href="https://bobby-sheng.github.io/posts/tech/">笔记</a></div>
+    <h1 class="post-title">
+      Python字典详解
+    </h1>
+    <div class="post-meta"><span title='2022-07-26 20:52:02 +0800 CST'>2022-07-26</span>&nbsp;·&nbsp;bobby
+
+</div>
+  </header> <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+            <summary accesskey="c" title="(Alt + C)">
+                <span class="details">Table of Contents</span>
+            </summary>
+
+            <div class="inner"><ul>
+                    <li>
+                        <a href="#%e4%b8%80%e5%ad%97%e5%85%b8%e5%b8%b8%e7%94%a8%e6%96%b9%e6%b3%95" aria-label="一、字典常用方法">一、字典常用方法</a><ul>
+                            
+                    <li>
+                        <a href="#1%e5%ae%9a%e4%b9%89" aria-label="1、定义">1、定义</a></li>
+                    <li>
+                        <a href="#22%e7%a7%8d%e8%8e%b7%e5%8f%96%e5%ad%97%e5%85%b8%e7%9a%84value%e6%96%b9%e6%b3%95" aria-label="2、2种获取字典的value方法">2、2种获取字典的value方法</a><ul>
+                            
+                    <li>
+                        <a href="#21%e7%ac%ac%e4%ba%8c%e7%a7%8d-dictkey" aria-label="2.1、第二种-dict[key]">2.1、第二种-dict[key]</a></li>
+                    <li>
+                        <a href="#21%e7%ac%ac%e4%b8%80%e7%a7%8d-dictgetkeydefault_value" aria-label="2.1、第一种-dict.get(key[,default_value])">2.1、第一种-dict.get(key[,default_value])</a></li></ul>
+                    </li>
+                    <li>
+                        <a href="#32%e7%a7%8d%e6%b7%bb%e5%8a%a0%e5%ad%97%e5%85%b8%e5%85%83%e7%b4%a0%e6%96%b9%e6%b3%95" aria-label="3、2种添加字典元素方法">3、2种添加字典元素方法</a><ul>
+                            
+                    <li>
+                        <a href="#31%e7%ac%ac%e4%b8%80%e7%a7%8d--dictkey--value" aria-label="3.1、第一种&amp;ndash;dict[key] = value">3.1、第一种&ndash;dict[key] = value</a></li>
+                    <li>
+                        <a href="#32%e7%ac%ac%e4%ba%8c%e7%a7%8d-dictsetdefaultkeydefault_value" aria-label="3.2、第二种-dict.setdefault(key[,default_value])">3.2、第二种-dict.setdefault(key[,default_value])</a></li></ul>
+                    </li>
+                    <li>
+                        <a href="#4%e8%8e%b7%e5%8f%96%e5%ad%97%e5%85%b8%e6%89%80%e6%9c%89keysvalues%e6%88%96%e8%80%85key-valu%e9%94%ae%e5%80%bc%e5%af%b9" aria-label="4、获取字典所有keys、Values或者key-valu键值对">4、获取字典所有keys、Values或者key-valu键值对</a></li>
+                    <li>
+                        <a href="#5%e5%be%aa%e7%8e%af" aria-label="5、循环">5、循环</a></li>
+                    <li>
+                        <a href="#63%e7%a7%8d%e5%88%a0%e9%99%a4%e5%ad%97%e5%85%b8%e5%86%85%e5%ae%b9%e6%96%b9%e6%b3%95" aria-label="6、3种删除字典内容方法">6、3种删除字典内容方法</a><ul>
+                            
+                    <li>
+                        <a href="#61-%e7%ac%ac%e4%b8%80%e7%a7%8d-del-dictkey" aria-label="6.1 第一种-del dict[key]">6.1 第一种-del dict[key]</a></li>
+                    <li>
+                        <a href="#62-%e7%ac%ac%e4%ba%8c%e7%a7%8d-dictpopkeydefault_value" aria-label="6.2 第二种-dict.pop(key[,default_value])">6.2 第二种-dict.pop(key[,default_value])</a></li>
+                    <li>
+                        <a href="#63-%e7%ac%ac%e4%b8%89%e7%a7%8d-dictclear" aria-label="6.3 第三种-dict.clear()">6.3 第三种-dict.clear()</a></li></ul>
+                    </li>
+                    <li>
+                        <a href="#7%e5%ad%97%e5%85%b8%e4%b8%ba%e5%a4%9a%e4%b8%aakey%e8%ae%be%e7%bd%ae%e5%80%bc-fromkeyskeyvalues" aria-label="7、字典为多个key设置值-fromkeys([key,],values)">7、字典为多个key设置值-fromkeys([key,],values)</a></li>
+                    <li>
+                        <a href="#8%e4%b8%a4%e4%b8%aa%e5%ad%97%e5%85%b8%e5%90%88%e5%b9%b6-dic1updatedic2" aria-label="8、两个字典合并-dic1.update(dic2)">8、两个字典合并-dic1.update(dic2)</a></li>
+                    <li>
+                        <a href="#9%e5%ad%97%e5%85%b8%e6%8e%92%e5%ba%8f-sorted" aria-label="9、字典排序-sorted()">9、字典排序-sorted()</a></li>
+                    <li>
+                        <a href="#10%e6%88%90%e5%91%98%e8%bf%90%e7%ae%97in%e5%92%8cnot-in" aria-label="10、成员运算in和not in">10、成员运算in和not in</a></li>
+                    <li>
+                        <a href="#11%e8%8e%b7%e5%8f%96%e5%ad%97%e5%85%b8%e7%9b%b8%e5%90%8c%e5%85%83%e7%b4%a0" aria-label="11、获取字典相同元素">11、获取字典相同元素</a>
+                    </li>
+                </ul>
+                </li>
+                </ul>
+            </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+         
+         activeElement = elements[0];
+         const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+         document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+     }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 && 
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+             const id = encodeURI(element.getAttribute('id')).toLowerCase();
+             if (element === activeElement){
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+             } else {
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+             }
+         })
+     }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;   
+    }
+</script>
+
+  <div class="post-content"><h2 id="一字典常用方法">一、字典常用方法<a hidden class="anchor" aria-hidden="true" href="#一字典常用方法">#</a></h2>
+<p>字典是Python中重要的数据类型，字典是由&quot;键-值&quot;对组成的集合，&ldquo;键-值&quot;对之间用逗号隔开，包含在一对花括号中。字典中的&quot;值&quot;通过&quot;键&quot;来引用。</p>
+<h3 id="1定义">1、定义<a hidden class="anchor" aria-hidden="true" href="#1定义">#</a></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#第一种</span>
+bobby <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#ae81ff">0</span>: <span style="color:#e6db74">&#39;b&#39;</span>}
+<span style="color:#66d9ef">print</span> bobby
+<span style="color:#75715e">#{1: &#39;a&#39;, 0: &#39;b&#39;}</span>
+<span style="color:#75715e">#第二种</span>
+bobby <span style="color:#f92672">=</span> dict{<span style="color:#ae81ff">1</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;a&#34;</span>,<span style="color:#ae81ff">0</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;b&#34;</span>}
+<span style="color:#66d9ef">print</span> bobby
+<span style="color:#75715e">#{1: &#39;a&#39;, 0: &#39;b&#39;}</span>
+</code></pre></div><h3 id="22种获取字典的value方法">2、2种获取字典的value方法<a hidden class="anchor" aria-hidden="true" href="#22种获取字典的value方法">#</a></h3>
+<h4 id="21第二种-dictkey">2.1、第二种-dict[key]<a hidden class="anchor" aria-hidden="true" href="#21第二种-dictkey">#</a></h4>
+<p>通过key值获取相应的value值</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">bobby <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#ae81ff">0</span>: <span style="color:#e6db74">&#39;b&#39;</span>}
+
+<span style="color:#66d9ef">print</span> bobby[<span style="color:#ae81ff">1</span>] <span style="color:#75715e">#a</span>
+</code></pre></div><h4 id="21第一种-dictgetkeydefault_value">2.1、第一种-dict.get(key[,default_value])<a hidden class="anchor" aria-hidden="true" href="#21第一种-dictgetkeydefault_value">#</a></h4>
+<p>参数key表示字典的键值，参数<code>default_value</code>可以作为get()的返回值，默认值为None。如果指定<code>default_value</code>参数值，表示如果参数key键值在字典key列表中，则返回对应的value值，如果不在，则返回预先设定的<code>default_value</code>的值</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># default_value参数可以作为未找到value的返回值，默认返回空</span>
+bobby <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#ae81ff">0</span>: <span style="color:#e6db74">&#39;b&#39;</span>}
+<span style="color:#75715e">#有值情况返回值</span>
+<span style="color:#66d9ef">print</span> bobby<span style="color:#f92672">.</span>get(<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;ppp&#34;</span>) <span style="color:#75715e">#a</span>
+
+<span style="color:#75715e">#无值情况返回自定义值</span>
+<span style="color:#66d9ef">print</span> bobby<span style="color:#f92672">.</span>get(<span style="color:#ae81ff">4</span>, <span style="color:#e6db74">&#34;ppp&#34;</span>) <span style="color:#75715e">#ppp</span>
+
+<span style="color:#75715e">#无自定义值且找不到值的情况默认返回空</span>
+<span style="color:#66d9ef">print</span> bobby<span style="color:#f92672">.</span>get(<span style="color:#ae81ff">4</span>) <span style="color:#75715e">#None</span>
+</code></pre></div><h3 id="32种添加字典元素方法">3、2种添加字典元素方法<a hidden class="anchor" aria-hidden="true" href="#32种添加字典元素方法">#</a></h3>
+<h4 id="31第一种--dictkey--value">3.1、第一种&ndash;dict[key] = value<a hidden class="anchor" aria-hidden="true" href="#31第一种--dictkey--value">#</a></h4>
+<p>如果键值key不在字典dict的key列表中，字典dict添加（key：value）的记录。如果已经在key列表中，则修改键值key对应的value值</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">bobby <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#ae81ff">0</span>: <span style="color:#e6db74">&#39;b&#39;</span>}
+bobby[<span style="color:#ae81ff">3</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;c&#34;</span>
+<span style="color:#66d9ef">print</span> bobby
+<span style="color:#75715e">#{0: &#39;b&#39;, 1: &#39;a&#39;, 3: &#39;c&#39;}</span>
+
+<span style="color:#75715e">#如果已经在key列表中，则修改键值key对应的value值。</span>
+
+bobby[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;c&#34;</span>
+<span style="color:#66d9ef">print</span> bobby
+<span style="color:#75715e">#{0: &#39;b&#39;, 1: &#39;c&#39;}</span>
+</code></pre></div><h4 id="32第二种-dictsetdefaultkeydefault_value">3.2、第二种-dict.setdefault(key[,default_value])<a hidden class="anchor" aria-hidden="true" href="#32第二种-dictsetdefaultkeydefault_value">#</a></h4>
+<p>如果索引key在字典key列表中，则返回对应的value值，如果不在key列表中，则添加新索引key和value在字典中，并反馈<code>default_valu</code>e值，默认值 为None</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#当key存在时，会返回存在的velue，并且不修改</span>
+bobby <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#ae81ff">0</span>: <span style="color:#e6db74">&#39;b&#39;</span>}
+<span style="color:#66d9ef">print</span> bobby<span style="color:#f92672">.</span>setdefault(<span style="color:#ae81ff">1</span>) <span style="color:#75715e">#a</span>
+<span style="color:#66d9ef">print</span> bobby <span style="color:#75715e">#{1: &#39;a&#39;, 0: &#39;b&#39;}</span>
+
+<span style="color:#75715e">#当key不存在时，则添加新索引key和value在字典中，并反馈</span>
+bobby <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#ae81ff">0</span>: <span style="color:#e6db74">&#39;b&#39;</span>}
+<span style="color:#66d9ef">print</span> bobby<span style="color:#f92672">.</span>setdefault(<span style="color:#ae81ff">4</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#e6db74">&#34;c&#34;</span>) <span style="color:#75715e">#c</span>
+<span style="color:#66d9ef">print</span> bobby <span style="color:#75715e">#{1: &#39;a&#39;, 0: &#39;b&#39;,4:&#39;c&#39;}</span>
+
+<span style="color:#75715e">#当key不存在时，default_value为空，默认填入null</span>
+bobby <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#ae81ff">0</span>: <span style="color:#e6db74">&#39;b&#39;</span>}
+<span style="color:#66d9ef">print</span> bobby<span style="color:#f92672">.</span>setdefault(<span style="color:#ae81ff">4</span>) <span style="color:#75715e">#null</span>
+<span style="color:#66d9ef">print</span> bobby <span style="color:#75715e">#{1: &#39;a&#39;, 0: &#39;b&#39;,4:&#39;null&#39;}</span>
+</code></pre></div><h3 id="4获取字典所有keysvalues或者key-valu键值对">4、获取字典所有keys、Values或者key-valu键值对<a hidden class="anchor" aria-hidden="true" href="#4获取字典所有keysvalues或者key-valu键值对">#</a></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#获取字典的所有&#34;键&#34;-&#34;值&#34;元素。通过调用字典的items()方法实现，返回的是(key,value)元组组成的列表</span>
+<span style="color:#75715e">#python2中取出的是列表（鸡蛋）；python3中取出的是元组（鸡）</span>
+bobby <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#ae81ff">0</span>: <span style="color:#e6db74">&#39;b&#39;</span>}
+<span style="color:#66d9ef">print</span> bobby<span style="color:#f92672">.</span>items() <span style="color:#75715e">#[(0, &#39;b&#39;), (1, &#39;a&#39;)]</span>
+
+<span style="color:#75715e">#获取所有key,返回列表</span>
+bobby <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#ae81ff">0</span>: <span style="color:#e6db74">&#39;b&#39;</span>}
+<span style="color:#66d9ef">print</span> bobby<span style="color:#f92672">.</span>key() <span style="color:#75715e">#[0, 1]</span>
+
+<span style="color:#75715e">#获取所有Values,返回列表</span>
+bobby <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#ae81ff">0</span>: <span style="color:#e6db74">&#39;b&#39;</span>}
+<span style="color:#66d9ef">print</span> bobby<span style="color:#f92672">.</span>Values() <span style="color:#75715e">#[&#39;b&#39;, &#39;a&#39;]</span>
+</code></pre></div><h3 id="5循环">5、循环<a hidden class="anchor" aria-hidden="true" href="#5循环">#</a></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># dic之循环</span>
+<span style="color:#75715e"># dic是无序的，但是python3采用了底层优化算法，所以看起来是有序的，但是python2中的字典是无序</span>
+bobby <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#ae81ff">0</span>: <span style="color:#e6db74">&#39;b&#39;</span>}
+<span style="color:#66d9ef">for</span> k, v <span style="color:#f92672">in</span> bobby<span style="color:#f92672">.</span>items(): 
+    <span style="color:#66d9ef">print</span>(k, v) <span style="color:#75715e">#(0, &#39;b&#39;) (1, &#39;a&#39;)</span>
+    
+ <span style="color:#75715e"># items可以换成keys()、values()</span>
+</code></pre></div><h3 id="63种删除字典内容方法">6、3种删除字典内容方法<a hidden class="anchor" aria-hidden="true" href="#63种删除字典内容方法">#</a></h3>
+<h4 id="61-第一种-del-dictkey">6.1 第一种-del dict[key]<a hidden class="anchor" aria-hidden="true" href="#61-第一种-del-dictkey">#</a></h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#调用py内置方法del</span>
+bobby <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#ae81ff">0</span>: <span style="color:#e6db74">&#39;b&#39;</span>}
+<span style="color:#66d9ef">del</span> bobby[<span style="color:#ae81ff">1</span>]
+<span style="color:#66d9ef">print</span> bobby <span style="color:#75715e">#{0: &#39;b&#39;}</span>
+</code></pre></div><h4 id="62-第二种-dictpopkeydefault_value">6.2 第二种-dict.pop(key[,default_value])<a hidden class="anchor" aria-hidden="true" href="#62-第二种-dictpopkeydefault_value">#</a></h4>
+<p>pop()函数必须指定参数索引key才能删除对应的值。如果索引key在字典key列表中，则返回索引key对应的value值。如果不存在，则返回预先设置的<code>default_value</code>值，如果未设置，会爬出KeyError异常信息</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#索引key在字典key列表中，则返回索引key对应的value值</span>
+bobby <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#ae81ff">0</span>: <span style="color:#e6db74">&#39;b&#39;</span>}
+
+<span style="color:#66d9ef">print</span> bobby<span style="color:#f92672">.</span>pop(<span style="color:#ae81ff">1</span>) <span style="color:#75715e">#a</span>
+<span style="color:#66d9ef">print</span> bobby <span style="color:#75715e">#{0: &#39;b&#39;}</span>
+
+<span style="color:#75715e">#索引key不在字典key列表中，未设置返回值，会直接报错</span>
+bobby <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#ae81ff">0</span>: <span style="color:#e6db74">&#39;b&#39;</span>}
+
+<span style="color:#66d9ef">print</span> bobby<span style="color:#f92672">.</span>pop(<span style="color:#ae81ff">3</span>) <span style="color:#75715e">#KeyError: 3</span>
+
+
+<span style="color:#75715e">#索引key在字典key列表中，设置返回值，会返回设置值或者提示</span>
+bobby <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#ae81ff">0</span>: <span style="color:#e6db74">&#39;b&#39;</span>}
+
+<span style="color:#66d9ef">print</span> bobby<span style="color:#f92672">.</span>pop(<span style="color:#ae81ff">3</span>,<span style="color:#e6db74">&#34;null&#34;</span>) <span style="color:#75715e">#null</span>
+<span style="color:#66d9ef">print</span> bobby {<span style="color:#ae81ff">0</span>: <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#39;a&#39;</span>}
+</code></pre></div><h4 id="63-第三种-dictclear">6.3 第三种-dict.clear()<a hidden class="anchor" aria-hidden="true" href="#63-第三种-dictclear">#</a></h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#调用py内置方法del</span>
+bobby <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#ae81ff">0</span>: <span style="color:#e6db74">&#39;b&#39;</span>}
+bobby<span style="color:#f92672">.</span>clear()
+<span style="color:#66d9ef">print</span> bobby <span style="color:#75715e">#{}</span>
+</code></pre></div><h3 id="7字典为多个key设置值-fromkeyskeyvalues">7、字典为多个key设置值-fromkeys([key,],values)<a hidden class="anchor" aria-hidden="true" href="#7字典为多个key设置值-fromkeyskeyvalues">#</a></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># dic之fromkeys()</span>
+dic <span style="color:#f92672">=</span> dict<span style="color:#f92672">.</span>fromkeys([<span style="color:#e6db74">&#39;name&#39;</span>, <span style="color:#e6db74">&#39;age&#39;</span>, <span style="color:#e6db74">&#39;sex&#39;</span>], None)
+<span style="color:#66d9ef">print</span> dic
+<span style="color:#75715e">#{&#39;name&#39;: None, &#39;age&#39;: None, &#39;sex&#39;: None}</span>
+</code></pre></div><h3 id="8两个字典合并-dic1updatedic2">8、两个字典合并-dic1.update(dic2)<a hidden class="anchor" aria-hidden="true" href="#8两个字典合并-dic1updatedic2">#</a></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># dic之update()</span>
+dic1 <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;a&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;b&#39;</span>: <span style="color:#ae81ff">2</span>}
+dic2 <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;c&#39;</span>: <span style="color:#ae81ff">3</span>}
+dic1<span style="color:#f92672">.</span>update(dic2)
+
+<span style="color:#66d9ef">print</span>(dic1)
+<span style="color:#75715e">#dic1: {&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3}</span>
+</code></pre></div><h3 id="9字典排序-sorted">9、字典排序-sorted()<a hidden class="anchor" aria-hidden="true" href="#9字典排序-sorted">#</a></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dict <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;2&#39;</span>:<span style="color:#e6db74">&#34;Python&#34;</span>,<span style="color:#e6db74">&#39;1&#39;</span>:<span style="color:#e6db74">&#34;Java&#34;</span>,<span style="color:#e6db74">&#39;3&#39;</span>:<span style="color:#e6db74">&#34;C++&#34;</span>}
+
+sorted(dict<span style="color:#f92672">.</span>items(),key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> d:d[<span style="color:#ae81ff">0</span>])
+<span style="color:#75715e">#[(&#39;1&#39;, &#39;Java&#39;), (&#39;2&#39;, &#39;Python&#39;), (&#39;3&#39;, &#39;C++&#39;)]</span>
+
+sorted(dict<span style="color:#f92672">.</span>items(),key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> d:d[<span style="color:#ae81ff">1</span>])
+<span style="color:#75715e">#[(&#39;3&#39;, &#39;C++&#39;), (&#39;1&#39;, &#39;Java&#39;), (&#39;2&#39;, &#39;Python&#39;)]</span>
+
+<span style="color:#75715e">#也可以使用如下方法对值进行排序，先使用zip进行反转</span>
+sorted(zip(prices<span style="color:#f92672">.</span>values(),prices<span style="color:#f92672">.</span>keys()))
+
+<span style="color:#75715e">#[(10.75, &#39;FB&#39;), (37.2, &#39;HPQ&#39;), (45.23, &#39;ACME&#39;), #(205.55, &#39;IBM&#39;), (612.78, &#39;AAPL&#39;)]</span>
+
+<span style="color:#75715e">#说明:如果存在values相同的情况下，则会按照key的大小进行排序。如下：</span>
+prices <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;ACME&#39;</span>: <span style="color:#ae81ff">45.23</span>, <span style="color:#e6db74">&#39;AAPL&#39;</span>: <span style="color:#ae81ff">612.78</span>, <span style="color:#e6db74">&#39;IBM&#39;</span>: <span style="color:#75715e">#612.78, &#39;HPQ&#39;: 37.20,&#39;FB&#39;: 10.75 }</span>
+sorted(zip(prices<span style="color:#f92672">.</span>values(),prices<span style="color:#f92672">.</span>keys()))
+<span style="color:#75715e">#[(10.75, &#39;FB&#39;), (37.2, &#39;HPQ&#39;), (45.23, &#39;ACME&#39;), (612.78, &#39;AAPL&#39;), (612.78, &#39;IBM&#39;)]</span>
+</code></pre></div><h3 id="10成员运算in和not-in">10、成员运算in和not in<a hidden class="anchor" aria-hidden="true" href="#10成员运算in和not-in">#</a></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># dic之成员运算in和not in,只会判断key是否存在</span>
+dic <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;a&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;b&#39;</span>: <span style="color:#ae81ff">2</span>}
+
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#f92672">in</span> dic) <span style="color:#75715e">#True</span>
+<span style="color:#66d9ef">print</span>(<span style="color:#ae81ff">1</span> <span style="color:#f92672">in</span> dic) <span style="color:#75715e">#False</span>
+</code></pre></div><h3 id="11获取字典相同元素">11、获取字典相同元素<a hidden class="anchor" aria-hidden="true" href="#11获取字典相同元素">#</a></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#获取两个字典相同的键、值或者items。可以通过集合运算的方式获取。</span>
+dic_a <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;x&#39;</span>:<span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;y&#39;</span>:<span style="color:#ae81ff">2</span>,<span style="color:#e6db74">&#39;z&#39;</span>:<span style="color:#ae81ff">3</span>}
+dic_b <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;w&#39;</span>:<span style="color:#ae81ff">10</span>,<span style="color:#e6db74">&#39;x&#39;</span>:<span style="color:#ae81ff">11</span>,<span style="color:#e6db74">&#39;y&#39;</span>:<span style="color:#ae81ff">2</span>}
+
+dic_a<span style="color:#f92672">.</span>keys() <span style="color:#f92672">&amp;</span> dic_b<span style="color:#f92672">.</span>keys()
+<span style="color:#75715e">#{&#39;x&#39;, &#39;y&#39;}</span>
+dic_a<span style="color:#f92672">.</span>keys() <span style="color:#f92672">-</span> dic_b<span style="color:#f92672">.</span>keys()
+<span style="color:#75715e">#{&#39;z&#39;}</span>
+dic_a<span style="color:#f92672">.</span>items() <span style="color:#f92672">&amp;</span> dic_a<span style="color:#f92672">.</span>items()
+<span style="color:#75715e">#{(&#39;z&#39;, 3), (&#39;x&#39;, 1), (&#39;y&#39;, 2)}</span>
+</code></pre></div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://bobby-sheng.github.io/tags/python/">python</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://bobby-sheng.github.io/posts/tech/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%AF%A6%E8%A7%A3/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Python字符串详解</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://bobby-sheng.github.io">张圣波&amp;博客</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
