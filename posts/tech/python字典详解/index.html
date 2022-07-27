@@ -117,8 +117,8 @@ if (!doNotTrack) {
   "keywords": [
     "python"
   ],
-  "articleBody": "一、字典常用方法 字典是Python中重要的数据类型，字典是由\"键-值\"对组成的集合，“键-值\"对之间用逗号隔开，包含在一对花括号中。字典中的\"值\"通过\"键\"来引用。\n1、定义 #第一种 bobby = {1: 'a', 0: 'b'} print bobby #{1: 'a', 0: 'b'} #第二种 bobby = dict{1 = \"a\",0 = \"b\"} print bobby #{1: 'a', 0: 'b'} 2、2种获取字典的value方法 2.1、第二种-dict[key] 通过key值获取相应的value值\nbobby = {1: 'a', 0: 'b'} print bobby[1] #a 2.1、第一种-dict.get(key[,default_value]) 参数key表示字典的键值，参数default_value可以作为get()的返回值，默认值为None。如果指定default_value参数值，表示如果参数key键值在字典key列表中，则返回对应的value值，如果不在，则返回预先设定的default_value的值\n# default_value参数可以作为未找到value的返回值，默认返回空 bobby = {1: 'a', 0: 'b'} #有值情况返回值 print bobby.get(1, \"ppp\") #a #无值情况返回自定义值 print bobby.get(4, \"ppp\") #ppp #无自定义值且找不到值的情况默认返回空 print bobby.get(4) #None 3、2种添加字典元素方法 3.1、第一种–dict[key] = value 如果键值key不在字典dict的key列表中，字典dict添加（key：value）的记录。如果已经在key列表中，则修改键值key对应的value值\nbobby = {1: 'a', 0: 'b'} bobby[3] = \"c\" print bobby #{0: 'b', 1: 'a', 3: 'c'} #如果已经在key列表中，则修改键值key对应的value值。 bobby[1] = \"c\" print bobby #{0: 'b', 1: 'c'} 3.2、第二种-dict.setdefault(key[,default_value]) 如果索引key在字典key列表中，则返回对应的value值，如果不在key列表中，则添加新索引key和value在字典中，并反馈default_value值，默认值 为None\n#当key存在时，会返回存在的velue，并且不修改 bobby = {1: 'a', 0: 'b'} print bobby.setdefault(1) #a print bobby #{1: 'a', 0: 'b'} #当key不存在时，则添加新索引key和value在字典中，并反馈 bobby = {1: 'a', 0: 'b'} print bobby.setdefault(4，\"c\") #c print bobby #{1: 'a', 0: 'b',4:'c'} #当key不存在时，default_value为空，默认填入null bobby = {1: 'a', 0: 'b'} print bobby.setdefault(4) #null print bobby #{1: 'a', 0: 'b',4:'null'} 4、获取字典所有keys、Values或者key-valu键值对 #获取字典的所有\"键\"-\"值\"元素。通过调用字典的items()方法实现，返回的是(key,value)元组组成的列表 #python2中取出的是列表（鸡蛋）；python3中取出的是元组（鸡） bobby = {1: 'a', 0: 'b'} print bobby.items() #[(0, 'b'), (1, 'a')] #获取所有key,返回列表 bobby = {1: 'a', 0: 'b'} print bobby.key() #[0, 1] #获取所有Values,返回列表 bobby = {1: 'a', 0: 'b'} print bobby.Values() #['b', 'a'] 5、循环 # dic之循环 # dic是无序的，但是python3采用了底层优化算法，所以看起来是有序的，但是python2中的字典是无序 bobby = {1: 'a', 0: 'b'} for k, v in bobby.items(): print(k, v) #(0, 'b') (1, 'a') # items可以换成keys()、values() 6、3种删除字典内容方法 6.1 第一种-del dict[key] #调用py内置方法del bobby = {1: 'a', 0: 'b'} del bobby[1] print bobby #{0: 'b'} 6.2 第二种-dict.pop(key[,default_value]) pop()函数必须指定参数索引key才能删除对应的值。如果索引key在字典key列表中，则返回索引key对应的value值。如果不存在，则返回预先设置的default_value值，如果未设置，会爬出KeyError异常信息\n#索引key在字典key列表中，则返回索引key对应的value值 bobby = {1: 'a', 0: 'b'} print bobby.pop(1) #a print bobby #{0: 'b'} #索引key不在字典key列表中，未设置返回值，会直接报错 bobby = {1: 'a', 0: 'b'} print bobby.pop(3) #KeyError: 3 #索引key在字典key列表中，设置返回值，会返回设置值或者提示 bobby = {1: 'a', 0: 'b'} print bobby.pop(3,\"null\") #null print bobby {0: 'b', 1: 'a'} 6.3 第三种-dict.clear() #调用py内置方法del bobby = {1: 'a', 0: 'b'} bobby.clear() print bobby #{} 7、字典为多个key设置值-fromkeys([key,],values) # dic之fromkeys() dic = dict.fromkeys(['name', 'age', 'sex'], None) print dic #{'name': None, 'age': None, 'sex': None} 8、两个字典合并-dic1.update(dic2) # dic之update() dic1 = {'a': 1, 'b': 2} dic2 = {'c': 3} dic1.update(dic2) print(dic1) #dic1: {'a': 1, 'b': 2, 'c': 3} 9、字典排序-sorted() dict = {'2':\"Python\",'1':\"Java\",'3':\"C++\"} sorted(dict.items(),key=lambda d:d[0]) #[('1', 'Java'), ('2', 'Python'), ('3', 'C++')] sorted(dict.items(),key=lambda d:d[1]) #[('3', 'C++'), ('1', 'Java'), ('2', 'Python')] #也可以使用如下方法对值进行排序，先使用zip进行反转 sorted(zip(prices.values(),prices.keys())) #[(10.75, 'FB'), (37.2, 'HPQ'), (45.23, 'ACME'), #(205.55, 'IBM'), (612.78, 'AAPL')] #说明:如果存在values相同的情况下，则会按照key的大小进行排序。如下： prices = {'ACME': 45.23, 'AAPL': 612.78, 'IBM': #612.78, 'HPQ': 37.20,'FB': 10.75 } sorted(zip(prices.values(),prices.keys())) #[(10.75, 'FB'), (37.2, 'HPQ'), (45.23, 'ACME'), (612.78, 'AAPL'), (612.78, 'IBM')] 10、成员运算in和not in # dic之成员运算in和not in,只会判断key是否存在 dic = {'a': 1, 'b': 2} print('a' in dic) #True print(1 in dic) #False 11、获取字典相同元素 #获取两个字典相同的键、值或者items。可以通过集合运算的方式获取。 dic_a = {'x':1,'y':2,'z':3} dic_b = {'w':10,'x':11,'y':2} dic_a.keys() \u0026 dic_b.keys() #{'x', 'y'} dic_a.keys() - dic_b.keys() #{'z'} dic_a.items() \u0026 dic_a.items() #{('z', 3), ('x', 1), ('y', 2)} ",
-  "wordCount" : "2010",
+  "articleBody": "一、字典常用方法 字典是Python中重要的数据类型，字典是由\"键-值\"对组成的集合，“键-值\"对之间用逗号隔开，包含在一对花括号中。字典中的\"值\"通过\"键\"来引用。\n1、定义 #第一种 bobby = {1: 'a', 0: 'b'} print bobby #{1: 'a', 0: 'b'} #第二种 bobby = dict{1 = \"a\",0 = \"b\"} print bobby #{1: 'a', 0: 'b'} 2、2种获取字典的value方法 2.1、dict[key] 通过key值获取相应的value值\nbobby = {1: 'a', 0: 'b'} print bobby[1] #a 2.1、dict.get(key[,default_value]) 参数key表示字典的键值，参数default_value可以作为get()的返回值，默认值为None。如果指定default_value参数值，表示如果参数key键值在字典key列表中，则返回对应的value值，如果不在，则返回预先设定的default_value的值\n# default_value参数可以作为未找到value的返回值，默认返回空 bobby = {1: 'a', 0: 'b'} #有值情况返回值 print bobby.get(1, \"ppp\") #a #无值情况返回自定义值 print bobby.get(4, \"ppp\") #ppp #无自定义值且找不到值的情况默认返回空 print bobby.get(4) #None 3、2种添加字典元素方法 3.1、dict[key] = value 如果键值key不在字典dict的key列表中，字典dict添加（key：value）的记录。如果已经在key列表中，则修改键值key对应的value值\nbobby = {1: 'a', 0: 'b'} bobby[3] = \"c\" print bobby #{0: 'b', 1: 'a', 3: 'c'} #如果已经在key列表中，则修改键值key对应的value值。 bobby[1] = \"c\" print bobby #{0: 'b', 1: 'c'} 3.2、dict.setdefault(key[,default_value]) 如果索引key在字典key列表中，则返回对应的value值，如果不在key列表中，则添加新索引key和value在字典中，并反馈default_value值，默认值 为None\n#当key存在时，会返回存在的value，并且不修改 bobby = {1: 'a', 0: 'b'} print bobby.setdefault(1) #a print bobby #{1: 'a', 0: 'b'} #当key不存在时，则添加新索引key和value在字典中，并反馈 bobby = {1: 'a', 0: 'b'} print bobby.setdefault(4，\"c\") #c print bobby #{1: 'a', 0: 'b',4:'c'} #当key不存在时，default_value为空，默认填入null bobby = {1: 'a', 0: 'b'} print bobby.setdefault(4) #null print bobby #{1: 'a', 0: 'b',4:'null'} 4、获取字典所有keys、Values或者key-valu键值对 #获取字典的所有\"键\"-\"值\"元素。通过调用字典的items()方法实现，返回的是(key,value)元组组成的列表 #python2中取出的是列表（鸡蛋）；python3中取出的是元组（鸡） bobby = {1: 'a', 0: 'b'} print bobby.items() #[(0, 'b'), (1, 'a')] #获取所有key,返回列表 bobby = {1: 'a', 0: 'b'} print bobby.key() #[0, 1] #获取所有Values,返回列表 bobby = {1: 'a', 0: 'b'} print bobby.Values() #['b', 'a'] 5、循环 # dic之循环 # dic是无序的，但是python3采用了底层优化算法，所以看起来是有序的，但是python2中的字典是无序 bobby = {1: 'a', 0: 'b'} for k, v in bobby.items(): print(k, v) #(0, 'b') (1, 'a') # items可以换成keys()、values() 6、3种删除字典内容方法 6.1 del dict[key] #调用py内置方法del bobby = {1: 'a', 0: 'b'} del bobby[1] print bobby #{0: 'b'} 6.2 dict.pop(key[,default_value]) pop()函数必须指定参数索引key才能删除对应的值。如果索引key在字典key列表中，则返回索引key对应的value值。如果不存在，则返回预先设置的default_value值，如果未设置，会爬出KeyError异常信息\n#索引key在字典key列表中，则返回索引key对应的value值 bobby = {1: 'a', 0: 'b'} print bobby.pop(1) #a print bobby #{0: 'b'} #索引key不在字典key列表中，未设置返回值，会直接报错 bobby = {1: 'a', 0: 'b'} print bobby.pop(3) #KeyError: 3 #索引key在字典key列表中，设置返回值，会返回设置值或者提示 bobby = {1: 'a', 0: 'b'} print bobby.pop(3,\"null\") #null print bobby {0: 'b', 1: 'a'} 6.3 dict.clear() #调用py内置方法del bobby = {1: 'a', 0: 'b'} bobby.clear() print bobby #{} 7、多个key设值-fromkeys([key,],values) # dic之fromkeys() dic = dict.fromkeys(['name', 'age', 'sex'], None) print dic #{'name': None, 'age': None, 'sex': None} 8、两字典合并-1.update(2) # dic之update() dic1 = {'a': 1, 'b': 2} dic2 = {'c': 3} dic1.update(dic2) print(dic1) #dic1: {'a': 1, 'b': 2, 'c': 3} 9、字典排序-sorted() dict = {'2':\"Python\",'1':\"Java\",'3':\"C++\"} sorted(dict.items(),key=lambda d:d[0]) #[('1', 'Java'), ('2', 'Python'), ('3', 'C++')] sorted(dict.items(),key=lambda d:d[1]) #[('3', 'C++'), ('1', 'Java'), ('2', 'Python')] #也可以使用如下方法对值进行排序，先使用zip进行反转 sorted(zip(prices.values(),prices.keys())) #[(10.75, 'FB'), (37.2, 'HPQ'), (45.23, 'ACME'), #(205.55, 'IBM'), (612.78, 'AAPL')] #说明:如果存在values相同的情况下，则会按照key的大小进行排序。如下： prices = {'ACME': 45.23, 'AAPL': 612.78, 'IBM': #612.78, 'HPQ': 37.20,'FB': 10.75 } sorted(zip(prices.values(),prices.keys())) #[(10.75, 'FB'), (37.2, 'HPQ'), (45.23, 'ACME'), (612.78, 'AAPL'), (612.78, 'IBM')] 10、成员运算in和not in # dic之成员运算in和not in,只会判断key是否存在 dic = {'a': 1, 'b': 2} print('a' in dic) #True print(1 in dic) #False 11、获取字典相同元素 #获取两个字典相同的键、值或者items。可以通过集合运算的方式获取。 dic_a = {'x':1,'y':2,'z':3} dic_b = {'w':10,'x':11,'y':2} dic_a.keys() \u0026 dic_b.keys() #{'x', 'y'} dic_a.keys() - dic_b.keys() #{'z'} dic_a.items() \u0026 dic_a.items() #{('z', 3), ('x', 1), ('y', 2)} ",
+  "wordCount" : "1924",
   "inLanguage": "en",
   "datePublished": "2022-07-26T20:52:02+08:00",
   "dateModified": "2022-07-26T20:52:02+08:00",
@@ -244,17 +244,17 @@ if (!doNotTrack) {
                         <a href="#22%e7%a7%8d%e8%8e%b7%e5%8f%96%e5%ad%97%e5%85%b8%e7%9a%84value%e6%96%b9%e6%b3%95" aria-label="2、2种获取字典的value方法">2、2种获取字典的value方法</a><ul>
                             
                     <li>
-                        <a href="#21%e7%ac%ac%e4%ba%8c%e7%a7%8d-dictkey" aria-label="2.1、第二种-dict[key]">2.1、第二种-dict[key]</a></li>
+                        <a href="#21dictkey" aria-label="2.1、dict[key]">2.1、dict[key]</a></li>
                     <li>
-                        <a href="#21%e7%ac%ac%e4%b8%80%e7%a7%8d-dictgetkeydefault_value" aria-label="2.1、第一种-dict.get(key[,default_value])">2.1、第一种-dict.get(key[,default_value])</a></li></ul>
+                        <a href="#21dictgetkeydefault_value" aria-label="2.1、dict.get(key[,default_value])">2.1、dict.get(key[,default_value])</a></li></ul>
                     </li>
                     <li>
                         <a href="#32%e7%a7%8d%e6%b7%bb%e5%8a%a0%e5%ad%97%e5%85%b8%e5%85%83%e7%b4%a0%e6%96%b9%e6%b3%95" aria-label="3、2种添加字典元素方法">3、2种添加字典元素方法</a><ul>
                             
                     <li>
-                        <a href="#31%e7%ac%ac%e4%b8%80%e7%a7%8d--dictkey--value" aria-label="3.1、第一种&amp;ndash;dict[key] = value">3.1、第一种&ndash;dict[key] = value</a></li>
+                        <a href="#31dictkey--value" aria-label="3.1、dict[key] = value">3.1、dict[key] = value</a></li>
                     <li>
-                        <a href="#32%e7%ac%ac%e4%ba%8c%e7%a7%8d-dictsetdefaultkeydefault_value" aria-label="3.2、第二种-dict.setdefault(key[,default_value])">3.2、第二种-dict.setdefault(key[,default_value])</a></li></ul>
+                        <a href="#32dictsetdefaultkeydefault_value" aria-label="3.2、dict.setdefault(key[,default_value])">3.2、dict.setdefault(key[,default_value])</a></li></ul>
                     </li>
                     <li>
                         <a href="#4%e8%8e%b7%e5%8f%96%e5%ad%97%e5%85%b8%e6%89%80%e6%9c%89keysvalues%e6%88%96%e8%80%85key-valu%e9%94%ae%e5%80%bc%e5%af%b9" aria-label="4、获取字典所有keys、Values或者key-valu键值对">4、获取字典所有keys、Values或者key-valu键值对</a></li>
@@ -264,16 +264,16 @@ if (!doNotTrack) {
                         <a href="#63%e7%a7%8d%e5%88%a0%e9%99%a4%e5%ad%97%e5%85%b8%e5%86%85%e5%ae%b9%e6%96%b9%e6%b3%95" aria-label="6、3种删除字典内容方法">6、3种删除字典内容方法</a><ul>
                             
                     <li>
-                        <a href="#61-%e7%ac%ac%e4%b8%80%e7%a7%8d-del-dictkey" aria-label="6.1 第一种-del dict[key]">6.1 第一种-del dict[key]</a></li>
+                        <a href="#61-del-dictkey" aria-label="6.1 del dict[key]">6.1 del dict[key]</a></li>
                     <li>
-                        <a href="#62-%e7%ac%ac%e4%ba%8c%e7%a7%8d-dictpopkeydefault_value" aria-label="6.2 第二种-dict.pop(key[,default_value])">6.2 第二种-dict.pop(key[,default_value])</a></li>
+                        <a href="#62-dictpopkeydefault_value" aria-label="6.2 dict.pop(key[,default_value])">6.2 dict.pop(key[,default_value])</a></li>
                     <li>
-                        <a href="#63-%e7%ac%ac%e4%b8%89%e7%a7%8d-dictclear" aria-label="6.3 第三种-dict.clear()">6.3 第三种-dict.clear()</a></li></ul>
+                        <a href="#63-dictclear" aria-label="6.3 dict.clear()">6.3 dict.clear()</a></li></ul>
                     </li>
                     <li>
-                        <a href="#7%e5%ad%97%e5%85%b8%e4%b8%ba%e5%a4%9a%e4%b8%aakey%e8%ae%be%e7%bd%ae%e5%80%bc-fromkeyskeyvalues" aria-label="7、字典为多个key设置值-fromkeys([key,],values)">7、字典为多个key设置值-fromkeys([key,],values)</a></li>
+                        <a href="#7%e5%a4%9a%e4%b8%aakey%e8%ae%be%e5%80%bc-fromkeyskeyvalues" aria-label="7、多个key设值-fromkeys([key,],values)">7、多个key设值-fromkeys([key,],values)</a></li>
                     <li>
-                        <a href="#8%e4%b8%a4%e4%b8%aa%e5%ad%97%e5%85%b8%e5%90%88%e5%b9%b6-dic1updatedic2" aria-label="8、两个字典合并-dic1.update(dic2)">8、两个字典合并-dic1.update(dic2)</a></li>
+                        <a href="#8%e4%b8%a4%e5%ad%97%e5%85%b8%e5%90%88%e5%b9%b6-1update2" aria-label="8、两字典合并-1.update(2)">8、两字典合并-1.update(2)</a></li>
                     <li>
                         <a href="#9%e5%ad%97%e5%85%b8%e6%8e%92%e5%ba%8f-sorted" aria-label="9、字典排序-sorted()">9、字典排序-sorted()</a></li>
                     <li>
@@ -360,12 +360,12 @@ bobby <span style="color:#f92672">=</span> dict{<span style="color:#ae81ff">1</s
 <span style="color:#66d9ef">print</span> bobby
 <span style="color:#75715e">#{1: &#39;a&#39;, 0: &#39;b&#39;}</span>
 </code></pre></div><h3 id="22种获取字典的value方法">2、2种获取字典的value方法<a hidden class="anchor" aria-hidden="true" href="#22种获取字典的value方法">#</a></h3>
-<h4 id="21第二种-dictkey">2.1、第二种-dict[key]<a hidden class="anchor" aria-hidden="true" href="#21第二种-dictkey">#</a></h4>
+<h4 id="21dictkey">2.1、dict[key]<a hidden class="anchor" aria-hidden="true" href="#21dictkey">#</a></h4>
 <p>通过key值获取相应的value值</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">bobby <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#ae81ff">0</span>: <span style="color:#e6db74">&#39;b&#39;</span>}
 
 <span style="color:#66d9ef">print</span> bobby[<span style="color:#ae81ff">1</span>] <span style="color:#75715e">#a</span>
-</code></pre></div><h4 id="21第一种-dictgetkeydefault_value">2.1、第一种-dict.get(key[,default_value])<a hidden class="anchor" aria-hidden="true" href="#21第一种-dictgetkeydefault_value">#</a></h4>
+</code></pre></div><h4 id="21dictgetkeydefault_value">2.1、dict.get(key[,default_value])<a hidden class="anchor" aria-hidden="true" href="#21dictgetkeydefault_value">#</a></h4>
 <p>参数key表示字典的键值，参数<code>default_value</code>可以作为get()的返回值，默认值为None。如果指定<code>default_value</code>参数值，表示如果参数key键值在字典key列表中，则返回对应的value值，如果不在，则返回预先设定的<code>default_value</code>的值</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># default_value参数可以作为未找到value的返回值，默认返回空</span>
 bobby <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#ae81ff">0</span>: <span style="color:#e6db74">&#39;b&#39;</span>}
@@ -378,7 +378,7 @@ bobby <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>
 <span style="color:#75715e">#无自定义值且找不到值的情况默认返回空</span>
 <span style="color:#66d9ef">print</span> bobby<span style="color:#f92672">.</span>get(<span style="color:#ae81ff">4</span>) <span style="color:#75715e">#None</span>
 </code></pre></div><h3 id="32种添加字典元素方法">3、2种添加字典元素方法<a hidden class="anchor" aria-hidden="true" href="#32种添加字典元素方法">#</a></h3>
-<h4 id="31第一种--dictkey--value">3.1、第一种&ndash;dict[key] = value<a hidden class="anchor" aria-hidden="true" href="#31第一种--dictkey--value">#</a></h4>
+<h4 id="31dictkey--value">3.1、dict[key] = value<a hidden class="anchor" aria-hidden="true" href="#31dictkey--value">#</a></h4>
 <p>如果键值key不在字典dict的key列表中，字典dict添加（key：value）的记录。如果已经在key列表中，则修改键值key对应的value值</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">bobby <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#ae81ff">0</span>: <span style="color:#e6db74">&#39;b&#39;</span>}
 bobby[<span style="color:#ae81ff">3</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;c&#34;</span>
@@ -390,9 +390,9 @@ bobby[<span style="color:#ae81ff">3</span>] <span style="color:#f92672">=</span>
 bobby[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;c&#34;</span>
 <span style="color:#66d9ef">print</span> bobby
 <span style="color:#75715e">#{0: &#39;b&#39;, 1: &#39;c&#39;}</span>
-</code></pre></div><h4 id="32第二种-dictsetdefaultkeydefault_value">3.2、第二种-dict.setdefault(key[,default_value])<a hidden class="anchor" aria-hidden="true" href="#32第二种-dictsetdefaultkeydefault_value">#</a></h4>
+</code></pre></div><h4 id="32dictsetdefaultkeydefault_value">3.2、dict.setdefault(key[,default_value])<a hidden class="anchor" aria-hidden="true" href="#32dictsetdefaultkeydefault_value">#</a></h4>
 <p>如果索引key在字典key列表中，则返回对应的value值，如果不在key列表中，则添加新索引key和value在字典中，并反馈<code>default_valu</code>e值，默认值 为None</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#当key存在时，会返回存在的velue，并且不修改</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#当key存在时，会返回存在的value，并且不修改</span>
 bobby <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#ae81ff">0</span>: <span style="color:#e6db74">&#39;b&#39;</span>}
 <span style="color:#66d9ef">print</span> bobby<span style="color:#f92672">.</span>setdefault(<span style="color:#ae81ff">1</span>) <span style="color:#75715e">#a</span>
 <span style="color:#66d9ef">print</span> bobby <span style="color:#75715e">#{1: &#39;a&#39;, 0: &#39;b&#39;}</span>
@@ -428,12 +428,12 @@ bobby <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>
     
  <span style="color:#75715e"># items可以换成keys()、values()</span>
 </code></pre></div><h3 id="63种删除字典内容方法">6、3种删除字典内容方法<a hidden class="anchor" aria-hidden="true" href="#63种删除字典内容方法">#</a></h3>
-<h4 id="61-第一种-del-dictkey">6.1 第一种-del dict[key]<a hidden class="anchor" aria-hidden="true" href="#61-第一种-del-dictkey">#</a></h4>
+<h4 id="61-del-dictkey">6.1 del dict[key]<a hidden class="anchor" aria-hidden="true" href="#61-del-dictkey">#</a></h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#调用py内置方法del</span>
 bobby <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#ae81ff">0</span>: <span style="color:#e6db74">&#39;b&#39;</span>}
 <span style="color:#66d9ef">del</span> bobby[<span style="color:#ae81ff">1</span>]
 <span style="color:#66d9ef">print</span> bobby <span style="color:#75715e">#{0: &#39;b&#39;}</span>
-</code></pre></div><h4 id="62-第二种-dictpopkeydefault_value">6.2 第二种-dict.pop(key[,default_value])<a hidden class="anchor" aria-hidden="true" href="#62-第二种-dictpopkeydefault_value">#</a></h4>
+</code></pre></div><h4 id="62-dictpopkeydefault_value">6.2 dict.pop(key[,default_value])<a hidden class="anchor" aria-hidden="true" href="#62-dictpopkeydefault_value">#</a></h4>
 <p>pop()函数必须指定参数索引key才能删除对应的值。如果索引key在字典key列表中，则返回索引key对应的value值。如果不存在，则返回预先设置的<code>default_value</code>值，如果未设置，会爬出KeyError异常信息</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#索引key在字典key列表中，则返回索引key对应的value值</span>
 bobby <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#ae81ff">0</span>: <span style="color:#e6db74">&#39;b&#39;</span>}
@@ -452,17 +452,17 @@ bobby <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>
 
 <span style="color:#66d9ef">print</span> bobby<span style="color:#f92672">.</span>pop(<span style="color:#ae81ff">3</span>,<span style="color:#e6db74">&#34;null&#34;</span>) <span style="color:#75715e">#null</span>
 <span style="color:#66d9ef">print</span> bobby {<span style="color:#ae81ff">0</span>: <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#39;a&#39;</span>}
-</code></pre></div><h4 id="63-第三种-dictclear">6.3 第三种-dict.clear()<a hidden class="anchor" aria-hidden="true" href="#63-第三种-dictclear">#</a></h4>
+</code></pre></div><h4 id="63-dictclear">6.3 dict.clear()<a hidden class="anchor" aria-hidden="true" href="#63-dictclear">#</a></h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#调用py内置方法del</span>
 bobby <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#ae81ff">0</span>: <span style="color:#e6db74">&#39;b&#39;</span>}
 bobby<span style="color:#f92672">.</span>clear()
 <span style="color:#66d9ef">print</span> bobby <span style="color:#75715e">#{}</span>
-</code></pre></div><h3 id="7字典为多个key设置值-fromkeyskeyvalues">7、字典为多个key设置值-fromkeys([key,],values)<a hidden class="anchor" aria-hidden="true" href="#7字典为多个key设置值-fromkeyskeyvalues">#</a></h3>
+</code></pre></div><h3 id="7多个key设值-fromkeyskeyvalues">7、多个key设值-fromkeys([key,],values)<a hidden class="anchor" aria-hidden="true" href="#7多个key设值-fromkeyskeyvalues">#</a></h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># dic之fromkeys()</span>
 dic <span style="color:#f92672">=</span> dict<span style="color:#f92672">.</span>fromkeys([<span style="color:#e6db74">&#39;name&#39;</span>, <span style="color:#e6db74">&#39;age&#39;</span>, <span style="color:#e6db74">&#39;sex&#39;</span>], None)
 <span style="color:#66d9ef">print</span> dic
 <span style="color:#75715e">#{&#39;name&#39;: None, &#39;age&#39;: None, &#39;sex&#39;: None}</span>
-</code></pre></div><h3 id="8两个字典合并-dic1updatedic2">8、两个字典合并-dic1.update(dic2)<a hidden class="anchor" aria-hidden="true" href="#8两个字典合并-dic1updatedic2">#</a></h3>
+</code></pre></div><h3 id="8两字典合并-1update2">8、两字典合并-1.update(2)<a hidden class="anchor" aria-hidden="true" href="#8两字典合并-1update2">#</a></h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># dic之update()</span>
 dic1 <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;a&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;b&#39;</span>: <span style="color:#ae81ff">2</span>}
 dic2 <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;c&#39;</span>: <span style="color:#ae81ff">3</span>}
@@ -514,6 +514,11 @@ dic_a<span style="color:#f92672">.</span>items() <span style="color:#f92672">&am
       <li><a href="https://bobby-sheng.github.io/tags/python/">python</a></li>
     </ul>
 <nav class="paginav">
+  <a class="prev" href="https://bobby-sheng.github.io/posts/tech/python%E5%85%83%E7%BB%84%E8%AF%A6%E8%A7%A3/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Python元组详解</span>
+  </a>
   <a class="next" href="https://bobby-sheng.github.io/posts/tech/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%AF%A6%E8%A7%A3/">
     <span class="title">Next »</span>
     <br>
