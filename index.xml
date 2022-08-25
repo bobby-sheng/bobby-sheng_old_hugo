@@ -6,7 +6,16 @@
     <description>Recent content on 张圣波&amp;博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 27 Jul 2022 15:17:01 +0800</lastBuildDate><atom:link href="https://bobby-sheng.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 Aug 2022 14:18:42 +0800</lastBuildDate><atom:link href="https://bobby-sheng.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pytest详解</title>
+      <link>https://bobby-sheng.github.io/posts/tech/pytest%E8%AF%A6%E8%A7%A3/</link>
+      <pubDate>Thu, 25 Aug 2022 14:18:42 +0800</pubDate>
+      
+      <guid>https://bobby-sheng.github.io/posts/tech/pytest%E8%AF%A6%E8%A7%A3/</guid>
+      <description>一、pytest概念 pytest是python的第三方测试框架，与python自带的unittest框架类似，但是比unittest框架要简</description>
+    </item>
+    
     <item>
       <title>Python集合詳解</title>
       <link>https://bobby-sheng.github.io/posts/tech/python%E9%9B%86%E5%90%88%E8%A9%B3%E8%A7%A3/</link>
