@@ -7,7 +7,7 @@
 <meta name="robots" content="index, follow">
 <title>Flask_SQLAlchemy数据库 | 张圣波&amp;博客</title>
 <meta name="keywords" content="flask">
-<meta name="description" content="简介 flask-SQLAlchemy对sqlite数据库的连接与增删改查 flask 与sqlite的创建与连接 #参考地址 https://www.py.cn/kuangjia/flask/24552.html 单表操作 增加 #单个数据增加 s">
+<meta name="description" content="简介 flask-SQLAlchemy对sqlite数据库的连接与增删改查 flask 与sqlite的创建与连接 #参考地址 https://www.py.cn/kuangjia/flask/24552.html 单表操作 # 参考地址 https://blog.csdn.net/weixin_45618073/article/details/125137141 增加 #单">
 <meta name="author" content="bobby">
 <link rel="canonical" href="https://bobby-sheng.github.io/posts/tech/flask_sqlalchemy%E6%95%B0%E6%8D%AE%E5%BA%93/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.1c05039c7f5f6d48ed1f2bb472103184bac9f68fa1ef83e4b2af21297060adf0.css" integrity="sha256-HAUDnH9fbUjtHyu0chAxhLrJ9o&#43;h74Pksq8hKXBgrfA=" rel="preload stylesheet" as="style">
@@ -70,15 +70,15 @@ if (!doNotTrack) {
 }
 </script>
 <meta property="og:title" content="Flask_SQLAlchemy数据库" />
-<meta property="og:description" content="简介 flask-SQLAlchemy对sqlite数据库的连接与增删改查 flask 与sqlite的创建与连接 #参考地址 https://www.py.cn/kuangjia/flask/24552.html 单表操作 增加 #单个数据增加 s" />
+<meta property="og:description" content="简介 flask-SQLAlchemy对sqlite数据库的连接与增删改查 flask 与sqlite的创建与连接 #参考地址 https://www.py.cn/kuangjia/flask/24552.html 单表操作 # 参考地址 https://blog.csdn.net/weixin_45618073/article/details/125137141 增加 #单" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://bobby-sheng.github.io/posts/tech/flask_sqlalchemy%E6%95%B0%E6%8D%AE%E5%BA%93/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-10-30T21:05:49&#43;08:00" />
-<meta property="article:modified_time" content="2022-10-30T21:05:49&#43;08:00" />
+<meta property="article:published_time" content="2022-10-31T00:50:03&#43;08:00" />
+<meta property="article:modified_time" content="2022-10-31T00:50:03&#43;08:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Flask_SQLAlchemy数据库"/>
-<meta name="twitter:description" content="简介 flask-SQLAlchemy对sqlite数据库的连接与增删改查 flask 与sqlite的创建与连接 #参考地址 https://www.py.cn/kuangjia/flask/24552.html 单表操作 增加 #单个数据增加 s"/>
+<meta name="twitter:description" content="简介 flask-SQLAlchemy对sqlite数据库的连接与增删改查 flask 与sqlite的创建与连接 #参考地址 https://www.py.cn/kuangjia/flask/24552.html 单表操作 # 参考地址 https://blog.csdn.net/weixin_45618073/article/details/125137141 增加 #单"/>
 
 
 <script type="application/ld+json">
@@ -113,15 +113,15 @@ if (!doNotTrack) {
   "@type": "BlogPosting",
   "headline": "Flask_SQLAlchemy数据库",
   "name": "Flask_SQLAlchemy数据库",
-  "description": "简介 flask-SQLAlchemy对sqlite数据库的连接与增删改查 flask 与sqlite的创建与连接 #参考地址 https://www.py.cn/kuangjia/flask/24552.html 单表操作 增加 #单个数据增加 s",
+  "description": "简介 flask-SQLAlchemy对sqlite数据库的连接与增删改查 flask 与sqlite的创建与连接 #参考地址 https://www.py.cn/kuangjia/flask/24552.html 单表操作 # 参考地址 https://blog.csdn.net/weixin_45618073/article/details/125137141 增加 #单",
   "keywords": [
     "flask"
   ],
-  "articleBody": "简介 flask-SQLAlchemy对sqlite数据库的连接与增删改查 flask 与sqlite的创建与连接 #参考地址 https://www.py.cn/kuangjia/flask/24552.html 单表操作 增加 #单个数据增加 s1=表(列=值，列=值) db.session.add(s1) db.session.commit() #除了查询，都要commit #多个数据增加 s1=表(列=值，列=值) s2=表(列=值，列=值) db.session.add.all(s1,s2) db.session.commit() #除了查询，都要commit 查询 #单个数据查询id为1的数据表，返回一个对象 stu=表名.query.get(1) print(表.列) #查询表中所有数据，返回一个列表，值为数据对象 stu=表名.query.all() for i in stu: print(表.列) #打印表所有此字段值 #条件查询，返回一个列表，值为符合条件的数据 stu=表名.query.filter(列=值) #后面可以接.all() 表示取全部，.first() 表示取第一个值 for i in stu: print(表.列) #打印列表中数据所有此字段值 #模糊条件查询，返回一个列表，值为符合条件的数据 stu=表名.query.filter_by(列=值) #后面可以接.all() 表示取全部，.first() 表示取第一个值，还可以继续接条件.filter(列=值)，或者.delete for i in stu: print(表.列) #打印列表中数据所有此字段值 修改 #第一种，直接拼接在查询后面 stu=表名.query.filter(列=值).update({\"列\":\"值\"}) print(stu) #返回修改了多少条数据的数量 db.session.commit() #除了查询，都要commit #第二种 改单个 stu=表名.query.filter(列=值).first() stu.列=新值 #直接赋予新值 db.session.add(s1) #修改值的需要增加add方法 db.session.commit() #除了查询，都要commit #第二种 循环改多个 stu=表名.query.filter(列=值).all() for i in stu: i.列=新值 #直接赋予新值 db.session.add(s1) db.session.commit() #除了查询，都要commit 删除 #第一种，直接拼接在查询后面 stu=表名.query.filter(列=值).delete({\"列\":\"值\"}) print(stu) #返回修改了多少条数据的数量 db.session.commit() #除了查询，都要commit 多表操作 一对多表设置关联 # 多表操作必须创建关联，假设A表关联B表，A表中需要创建列关联B，一放使用db.relationship(\"B表名\",bockref(\"A表\"))。多方B表需要创建外键db.ForeignKey(\"所属表中的关联字段\")关联A表 #db.relationship是和db.ForeignKey配合使用的，用来描述一对多关系。 #在一对多中，db.ForeignKey写在“多”方，关联“一”方的某一个属性。 #db.relationship写在“一”方，“一”方通过该属性可以取出一个列表，列表元素为所有对应的“多”方的对象。 #db.relationship中的backref是“多”方使用的。“多”方通过该属性（即backref传入的字符串）可以访问到其对应的“一”方对象。 class A(db.Model): #一方 id = db.Column(db.String(50), primary_key=True) A_age = db.Column(db.String(50)) BB=db.relationship(\"B\",bockref(\"a1\")) #给到B表的可访问字段,填充的字段是否需要一样暂时未知 class B(db.Model): #多方 id = db.Column(db.String(50), primary_key=True) B_age = db.Column(db.String(50)) AB = db.Columu(db.String,db.ForeignKey(\"a.id\")) #外键，关联到A表中。 查询 # 一访问多 stu=A.query.filter(A_age=1).first() print(stu.A_age,stu.BB.B_age) # 通过ForeignKey 字段名访问 # 多访问一 stu=B.query.filter(id=1).first() print(stu.B_age,stu.BB.a1.id) #需要通过A表中的bockref中的值访问 多对多表设置关联 暂未写入 ",
-  "wordCount" : "1383",
+  "articleBody": "简介 flask-SQLAlchemy对sqlite数据库的连接与增删改查 flask 与sqlite的创建与连接 #参考地址 https://www.py.cn/kuangjia/flask/24552.html 单表操作 # 参考地址 https://blog.csdn.net/weixin_45618073/article/details/125137141 增加 #单个数据增加 stu=Student(name=\"张三\",gender=\"男\",phone=\"1452\") db.session.add(s1) db.session.commit() #除了查询，都要commit #多个数据增加 stu=Student(name=\"张三\",gender=\"男\",phone=\"1452\") stu2=Student(name=\"李四\",gender=\"男\",phone=\"1445\") stu3=Student(name=\"王五\",gender=\"男\",phone=\"1465245\") stu4=Student(name=\"老王\",gender=\"男\",phone=\"145245\") db.session.add_all([stu,stu2,stu3,stu4]) db.session.commit() #除了查询，都要commit 查询 #单个数据查询id为1的数据表，返回一个对象 stu=Student.query.get(1) print(Student.name) #查询表中所有数据，返回一个列表，值为数据对象 stu=Student.query.all() for i in stu: print(Student.name) #打印表所有此字段值 #(类名.属性名 条件操作符 条件) 过滤特定条件,返回的是query对象 Student.query.filter(Student.id==\"1\").first() #后面可以接.all() 表示取全部，.first() 表示取第一个值 for i in stu: print(表.列) #打印列表中数据所有此字段值 #(关键字参数对) 单条件查询,条件必须关键字参数,而且and连接 Student.query.filter_by(id=\"1\").first() #后面可以接.all() 表示取全部，.first() 表示取第一个值，还可以继续接条件.filter(列=值)，或者.delete for i in stu: print(Student.name) #打印列表中数据所有此字段值 修改 #第一种，直接拼接在查询后面 Student.query.filter(Student.id==\"1\").first().update({\"列\":\"值\"}) print(stu) #返回修改了多少条数据的数量 db.session.commit() #除了查询，都要commit #第二种 改单个 Student.query.filter(Student.id==\"1\").first() stu.列=新值 #直接赋予新值 db.session.add(s1) #修改值的需要增加add方法 db.session.commit() #除了查询，都要commit #第二种 循环改多个 Student.query.filter(Student.id==\"1\").all() for i in stu: i.列=新值 #直接赋予新值 db.session.add(s1) db.session.commit() #除了查询，都要commit 删除 #第一种，直接拼接在查询后面 stu=表名.query.filter(列=值).delete({\"列\":\"值\"}) print(stu) #返回修改了多少条数据的数量 db.session.commit() #除了查询，都要commit 多表操作 一对多表设置关联 # 多表操作必须创建关联，假设A表关联B表，A表中需要创建列关联B，一放使用db.relationship(\"B表名\",bockref(\"A表\"))。多方B表需要创建外键db.ForeignKey(\"所属表中的关联字段\")关联A表 #db.relationship是和db.ForeignKey配合使用的，用来描述一对多关系。 #在一对多中，db.ForeignKey写在“多”方，关联“一”方的某一个属性。 #db.relationship写在“一”方，“一”方通过该属性可以取出一个列表，列表元素为所有对应的“多”方的对象。 #db.relationship中的backref是“多”方使用的。“多”方通过该属性（即backref传入的字符串）可以访问到其对应的“一”方对象。 class Student(db.Model): \"\"\" 学生表 \"\"\" __tablename__ = 'student' id = db.Column(db.Integer, primary_key=True) name = db.Column(db.String(100)) gender = db.Column(db.String(100)) phone = db.Column(db.String(100)) grades = db.relationship(\"Grade\", backref=\"student\") #反向给到成绩表数据 class Grade(db.Model): \"\"\" 成绩表 \"\"\" __tablename__ = 'grade' id = db.Column(db.Integer, primary_key=True) grade = db.Column(db.String(100)) student_id = db.Column(db.String(100), db.ForeignKey(\"student.id\")) # 关联学生表的id 查询 # 一访问多 stu = Student.query.filter(Student.name == \"张三\").all() for i in stu: print(i.name) for k in i.grades: print(k.grade) # 多访问一 gra=Grade.query.filter_by(student_id =\"1\").all() for i in gra: print(i.grade,i.student.name) 多对多表设置关联 表 # 学生可以存在多个课程，课程可以存在多个学生。多对多关系 class Student(db.Model): \"\"\" 学生表 \"\"\" __tablename__ = 'student' id = db.Column(db.Integer, primary_key=True) name = db.Column(db.String(100)) gender = db.Column(db.String(100)) phone = db.Column(db.String(100)) grades = db.relationship(\"Grade\", backref=\"student\") course = db.relationship(\"Course\", secondary=\"student_to_course\", backref=\"students\") # secondar比一对多多了这个参数，中间表参数 # backref可以随便填，反向表获取使用 class StudentToCourse(db.Model): \"\"\" 中间表放外键 \"\"\" __tablename__ = 'student_to_course' id = db.Column(db.Integer, primary_key=True) student_id = db.Column(db.String(100), db.ForeignKey(\"student.id\")) #外键，数据库存在此字段 course_id = db.Column(db.String(100), db.ForeignKey(\"course.id\")) #外键，数据库存在此字段 class Course(db.Model): \"\"\" 课程表 \"\"\" __tablename__ = 'course' id = db.Column(db.Integer, primary_key=True) name = db.Column(db.String(100)) grades = db.relationship(\"Grade\", backref=\"course\") techer_id = db.Column(db.String(100), db.ForeignKey(\"techer.id\")) 添加关联数据 # 多对多，给一个学生增加课程 # 先查询出学生 stu = Student.query.get(1) print(stu.name) # 给这个学生加课程,关联会添加到中间表中。显示id都为1 cou = Course.query.filter(Course.id == 1).all() stu.courses = cou db.session.add(stu) db.session.commit() # 多对多增加关联，给多个学生增加课程 # 查询学生表 stu = Student.query.filter(Student.id  2).all() print(stu) # 查询课程表 cou = Course.query.filter(Course.id  1).all() print(cou) for i in stu: i.courses = cou db.session.add(i) db.session.commit() 查询关联数据 #多对多查询，通过学生表查询课程表 stu=Student.query.get(1) for i in stu.courses: print(i.name) #多对多查询，查询出来的对象不是一个列表。非列表通过课程表查询学生表 cou = Course.query.get(2) print(cou) for i in cou.students: print(i.name) #多对多查询，查询出来的对象是一个列表。通过课程表查询学生表 cou = Course.query.filter(Course.name == \"语文\").all() print(cou) for i in cou: for k in i.students: print(k.name) ",
+  "wordCount" : "2016",
   "inLanguage": "en",
-  "datePublished": "2022-10-30T21:05:49+08:00",
-  "dateModified": "2022-10-30T21:05:49+08:00",
+  "datePublished": "2022-10-31T00:50:03+08:00",
+  "dateModified": "2022-10-31T00:50:03+08:00",
   "author":{
     "@type": "Person",
     "name": "bobby"
@@ -222,9 +222,9 @@ if (!doNotTrack) {
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://bobby-sheng.github.io">Home</a>&nbsp;»&nbsp;<a href="https://bobby-sheng.github.io/posts/">文章</a>&nbsp;»&nbsp;<a href="https://bobby-sheng.github.io/posts/tech/">笔记</a></div>
     <h1 class="post-title">
-      Flask_SQLAlchemy数据库
+      Flask_SQLAlchemy数据库<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>
     </h1>
-    <div class="post-meta"><span title='2022-10-30 21:05:49 +0800 CST'>2022-10-30</span>&nbsp;·&nbsp;bobby
+    <div class="post-meta"><span title='2022-10-31 00:50:03 +0800 CST'>2022-10-31</span>&nbsp;·&nbsp;bobby
 
 </div>
   </header> <aside id="toc-container" class="toc-container wide">
@@ -257,9 +257,17 @@ if (!doNotTrack) {
                     <li>
                         <a href="#%e4%b8%80%e5%af%b9%e5%a4%9a%e8%a1%a8%e8%ae%be%e7%bd%ae%e5%85%b3%e8%81%94" aria-label="一对多表设置关联">一对多表设置关联</a></li>
                     <li>
-                        <a href="#%e6%9f%a5%e8%af%a2-1" aria-label="查询">查询</a></li>
+                        <a href="#%e6%9f%a5%e8%af%a2-1" aria-label="查询">查询</a></li></ul>
+                    </li>
                     <li>
-                        <a href="#%e5%a4%9a%e5%af%b9%e5%a4%9a%e8%a1%a8%e8%ae%be%e7%bd%ae%e5%85%b3%e8%81%94" aria-label="多对多表设置关联">多对多表设置关联</a>
+                        <a href="#%e5%a4%9a%e5%af%b9%e5%a4%9a%e8%a1%a8%e8%ae%be%e7%bd%ae%e5%85%b3%e8%81%94" aria-label="多对多表设置关联">多对多表设置关联</a></li>
+                    <li>
+                        <a href="#%e8%a1%a8" aria-label="表">表</a><ul>
+                            
+                    <li>
+                        <a href="#%e6%b7%bb%e5%8a%a0%e5%85%b3%e8%81%94%e6%95%b0%e6%8d%ae" aria-label="添加关联数据">添加关联数据</a></li>
+                    <li>
+                        <a href="#%e6%9f%a5%e8%af%a2%e5%85%b3%e8%81%94%e6%95%b0%e6%8d%ae" aria-label="查询关联数据">查询关联数据</a>
                     </li>
                 </ul>
                 </li>
@@ -334,49 +342,54 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#参考地址</span>
 https:<span style="color:#f92672">//</span>www<span style="color:#f92672">.</span>py<span style="color:#f92672">.</span>cn<span style="color:#f92672">/</span>kuangjia<span style="color:#f92672">/</span>flask<span style="color:#f92672">/</span><span style="color:#ae81ff">24552.</span>html
 </code></pre></div><h2 id="单表操作">单表操作<a hidden class="anchor" aria-hidden="true" href="#单表操作">#</a></h2>
-<h3 id="增加">增加<a hidden class="anchor" aria-hidden="true" href="#增加">#</a></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"># 参考地址
+https://blog.csdn.net/weixin_45618073/article/details/125137141
+</code></pre></div><h3 id="增加">增加<a hidden class="anchor" aria-hidden="true" href="#增加">#</a></h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#单个数据增加</span>
-s1<span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">表</span>(<span style="color:#960050;background-color:#1e0010">列</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">值，列</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">值</span>)
+stu<span style="color:#f92672">=</span>Student(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;张三&#34;</span>,gender<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;男&#34;</span>,phone<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1452&#34;</span>)
 db<span style="color:#f92672">.</span>session<span style="color:#f92672">.</span>add(s1)
 db<span style="color:#f92672">.</span>session<span style="color:#f92672">.</span>commit() <span style="color:#75715e">#除了查询，都要commit</span>
+
 <span style="color:#75715e">#多个数据增加</span>
-s1<span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">表</span>(<span style="color:#960050;background-color:#1e0010">列</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">值，列</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">值</span>)
-s2<span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">表</span>(<span style="color:#960050;background-color:#1e0010">列</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">值，列</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">值</span>)
-db<span style="color:#f92672">.</span>session<span style="color:#f92672">.</span>add<span style="color:#f92672">.</span>all(s1,s2)
+stu<span style="color:#f92672">=</span>Student(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;张三&#34;</span>,gender<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;男&#34;</span>,phone<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1452&#34;</span>)
+stu2<span style="color:#f92672">=</span>Student(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;李四&#34;</span>,gender<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;男&#34;</span>,phone<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1445&#34;</span>)
+stu3<span style="color:#f92672">=</span>Student(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;王五&#34;</span>,gender<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;男&#34;</span>,phone<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1465245&#34;</span>)
+stu4<span style="color:#f92672">=</span>Student(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;老王&#34;</span>,gender<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;男&#34;</span>,phone<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;145245&#34;</span>)
+db<span style="color:#f92672">.</span>session<span style="color:#f92672">.</span>add_all([stu,stu2,stu3,stu4])
 db<span style="color:#f92672">.</span>session<span style="color:#f92672">.</span>commit() <span style="color:#75715e">#除了查询，都要commit</span>
 </code></pre></div><h3 id="查询">查询<a hidden class="anchor" aria-hidden="true" href="#查询">#</a></h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#单个数据查询id为1的数据表，返回一个对象</span>
-stu<span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">表名</span><span style="color:#f92672">.</span>query<span style="color:#f92672">.</span>get(<span style="color:#ae81ff">1</span>)
-<span style="color:#66d9ef">print</span>(<span style="color:#960050;background-color:#1e0010">表</span><span style="color:#f92672">.</span><span style="color:#960050;background-color:#1e0010">列</span>)
+stu<span style="color:#f92672">=</span>Student<span style="color:#f92672">.</span>query<span style="color:#f92672">.</span>get(<span style="color:#ae81ff">1</span>)
+<span style="color:#66d9ef">print</span>(Student<span style="color:#f92672">.</span>name)
 
 <span style="color:#75715e">#查询表中所有数据，返回一个列表，值为数据对象</span>
-stu<span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">表名</span><span style="color:#f92672">.</span>query<span style="color:#f92672">.</span>all()
+stu<span style="color:#f92672">=</span>Student<span style="color:#f92672">.</span>query<span style="color:#f92672">.</span>all()
 <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> stu:
-    <span style="color:#66d9ef">print</span>(<span style="color:#960050;background-color:#1e0010">表</span><span style="color:#f92672">.</span><span style="color:#960050;background-color:#1e0010">列</span>) <span style="color:#75715e">#打印表所有此字段值</span>
+    <span style="color:#66d9ef">print</span>(Student<span style="color:#f92672">.</span>name) <span style="color:#75715e">#打印表所有此字段值</span>
 
-<span style="color:#75715e">#条件查询，返回一个列表，值为符合条件的数据</span>
-stu<span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">表名</span><span style="color:#f92672">.</span>query<span style="color:#f92672">.</span>filter(<span style="color:#960050;background-color:#1e0010">列</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">值</span>) <span style="color:#75715e">#后面可以接.all() 表示取全部，.first() 表示取第一个值</span>
+<span style="color:#75715e">#(类名.属性名 条件操作符 条件) 过滤特定条件,返回的是query对象</span>
+Student<span style="color:#f92672">.</span>query<span style="color:#f92672">.</span>filter(Student<span style="color:#f92672">.</span>id<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;1&#34;</span>)<span style="color:#f92672">.</span>first() <span style="color:#75715e">#后面可以接.all() 表示取全部，.first() 表示取第一个值</span>
 <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> stu:
     <span style="color:#66d9ef">print</span>(<span style="color:#960050;background-color:#1e0010">表</span><span style="color:#f92672">.</span><span style="color:#960050;background-color:#1e0010">列</span>) <span style="color:#75715e">#打印列表中数据所有此字段值</span>
     
-<span style="color:#75715e">#模糊条件查询，返回一个列表，值为符合条件的数据</span>
-stu<span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">表名</span><span style="color:#f92672">.</span>query<span style="color:#f92672">.</span>filter_by(<span style="color:#960050;background-color:#1e0010">列</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">值</span>) <span style="color:#75715e">#后面可以接.all() 表示取全部，.first() 表示取第一个值，还可以继续接条件.filter(列=值)，或者.delete</span>
+<span style="color:#75715e">#(关键字参数对) 单条件查询,条件必须关键字参数,而且and连接</span>
+Student<span style="color:#f92672">.</span>query<span style="color:#f92672">.</span>filter_by(id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span>)<span style="color:#f92672">.</span>first() <span style="color:#75715e">#后面可以接.all() 表示取全部，.first() 表示取第一个值，还可以继续接条件.filter(列=值)，或者.delete</span>
 <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> stu:
-    <span style="color:#66d9ef">print</span>(<span style="color:#960050;background-color:#1e0010">表</span><span style="color:#f92672">.</span><span style="color:#960050;background-color:#1e0010">列</span>) <span style="color:#75715e">#打印列表中数据所有此字段值</span>
+    <span style="color:#66d9ef">print</span>(Student<span style="color:#f92672">.</span>name) <span style="color:#75715e">#打印列表中数据所有此字段值</span>
 </code></pre></div><h3 id="修改">修改<a hidden class="anchor" aria-hidden="true" href="#修改">#</a></h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#第一种，直接拼接在查询后面</span>
-stu<span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">表名</span><span style="color:#f92672">.</span>query<span style="color:#f92672">.</span>filter(<span style="color:#960050;background-color:#1e0010">列</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">值</span>)<span style="color:#f92672">.</span>update({<span style="color:#e6db74">&#34;列&#34;</span>:<span style="color:#e6db74">&#34;值&#34;</span>})
+Student<span style="color:#f92672">.</span>query<span style="color:#f92672">.</span>filter(Student<span style="color:#f92672">.</span>id<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;1&#34;</span>)<span style="color:#f92672">.</span>first()<span style="color:#f92672">.</span>update({<span style="color:#e6db74">&#34;列&#34;</span>:<span style="color:#e6db74">&#34;值&#34;</span>})
 <span style="color:#66d9ef">print</span>(stu) <span style="color:#75715e">#返回修改了多少条数据的数量</span>
 db<span style="color:#f92672">.</span>session<span style="color:#f92672">.</span>commit() <span style="color:#75715e">#除了查询，都要commit</span>
 
 <span style="color:#75715e">#第二种 改单个</span>
-stu<span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">表名</span><span style="color:#f92672">.</span>query<span style="color:#f92672">.</span>filter(<span style="color:#960050;background-color:#1e0010">列</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">值</span>)<span style="color:#f92672">.</span>first()
+Student<span style="color:#f92672">.</span>query<span style="color:#f92672">.</span>filter(Student<span style="color:#f92672">.</span>id<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;1&#34;</span>)<span style="color:#f92672">.</span>first()
 stu<span style="color:#f92672">.</span><span style="color:#960050;background-color:#1e0010">列</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">新值</span> <span style="color:#75715e">#直接赋予新值</span>
 db<span style="color:#f92672">.</span>session<span style="color:#f92672">.</span>add(s1) <span style="color:#75715e">#修改值的需要增加add方法</span>
 db<span style="color:#f92672">.</span>session<span style="color:#f92672">.</span>commit() <span style="color:#75715e">#除了查询，都要commit</span>
 
 <span style="color:#75715e">#第二种 循环改多个</span>
-stu<span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">表名</span><span style="color:#f92672">.</span>query<span style="color:#f92672">.</span>filter(<span style="color:#960050;background-color:#1e0010">列</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">值</span>)<span style="color:#f92672">.</span>all()
+Student<span style="color:#f92672">.</span>query<span style="color:#f92672">.</span>filter(Student<span style="color:#f92672">.</span>id<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;1&#34;</span>)<span style="color:#f92672">.</span>all()
 <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> stu:
     i<span style="color:#f92672">.</span><span style="color:#960050;background-color:#1e0010">列</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">新值</span> <span style="color:#75715e">#直接赋予新值</span>
     db<span style="color:#f92672">.</span>session<span style="color:#f92672">.</span>add(s1)
@@ -394,24 +407,117 @@ db<span style="color:#f92672">.</span>session<span style="color:#f92672">.</span
 <span style="color:#75715e">#db.relationship写在“一”方，“一”方通过该属性可以取出一个列表，列表元素为所有对应的“多”方的对象。</span>
 <span style="color:#75715e">#db.relationship中的backref是“多”方使用的。“多”方通过该属性（即backref传入的字符串）可以访问到其对应的“一”方对象。</span>
 
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span>(db<span style="color:#f92672">.</span>Model): <span style="color:#75715e">#一方</span>
-    id <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>Column(db<span style="color:#f92672">.</span>String(<span style="color:#ae81ff">50</span>), primary_key<span style="color:#f92672">=</span>True)
-    A_age <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>Column(db<span style="color:#f92672">.</span>String(<span style="color:#ae81ff">50</span>))
-    BB<span style="color:#f92672">=</span>db<span style="color:#f92672">.</span>relationship(<span style="color:#e6db74">&#34;B&#34;</span>,bockref(<span style="color:#e6db74">&#34;a1&#34;</span>)) <span style="color:#75715e">#给到B表的可访问字段,填充的字段是否需要一样暂时未知</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Student</span>(db<span style="color:#f92672">.</span>Model):
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    学生表
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    __tablename__ <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;student&#39;</span>
+    id <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>Column(db<span style="color:#f92672">.</span>Integer, primary_key<span style="color:#f92672">=</span>True)
+    name <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>Column(db<span style="color:#f92672">.</span>String(<span style="color:#ae81ff">100</span>))
+    gender <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>Column(db<span style="color:#f92672">.</span>String(<span style="color:#ae81ff">100</span>))
+    phone <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>Column(db<span style="color:#f92672">.</span>String(<span style="color:#ae81ff">100</span>))
+    grades <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>relationship(<span style="color:#e6db74">&#34;Grade&#34;</span>, backref<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;student&#34;</span>) <span style="color:#75715e">#反向给到成绩表数据</span>
     
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">B</span>(db<span style="color:#f92672">.</span>Model): <span style="color:#75715e">#多方</span>
-    id <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>Column(db<span style="color:#f92672">.</span>String(<span style="color:#ae81ff">50</span>), primary_key<span style="color:#f92672">=</span>True)
-    B_age <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>Column(db<span style="color:#f92672">.</span>String(<span style="color:#ae81ff">50</span>))
-    AB <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>Columu(db<span style="color:#f92672">.</span>String,db<span style="color:#f92672">.</span>ForeignKey(<span style="color:#e6db74">&#34;a.id&#34;</span>))  <span style="color:#75715e">#外键，关联到A表中。</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Grade</span>(db<span style="color:#f92672">.</span>Model):
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    成绩表
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    __tablename__ <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;grade&#39;</span>
+
+    id <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>Column(db<span style="color:#f92672">.</span>Integer, primary_key<span style="color:#f92672">=</span>True)
+    grade <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>Column(db<span style="color:#f92672">.</span>String(<span style="color:#ae81ff">100</span>))
+    student_id <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>Column(db<span style="color:#f92672">.</span>String(<span style="color:#ae81ff">100</span>), db<span style="color:#f92672">.</span>ForeignKey(<span style="color:#e6db74">&#34;student.id&#34;</span>)) <span style="color:#75715e"># 关联学生表的id</span>
 </code></pre></div><h3 id="查询-1">查询<a hidden class="anchor" aria-hidden="true" href="#查询-1">#</a></h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 一访问多</span>
-stu<span style="color:#f92672">=</span>A<span style="color:#f92672">.</span>query<span style="color:#f92672">.</span>filter(A_age<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>first()
-<span style="color:#66d9ef">print</span>(stu<span style="color:#f92672">.</span>A_age,stu<span style="color:#f92672">.</span>BB<span style="color:#f92672">.</span>B_age) <span style="color:#75715e"># 通过ForeignKey 字段名访问</span>
+stu <span style="color:#f92672">=</span> Student<span style="color:#f92672">.</span>query<span style="color:#f92672">.</span>filter(Student<span style="color:#f92672">.</span>name <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;张三&#34;</span>)<span style="color:#f92672">.</span>all()
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> stu:
+    <span style="color:#66d9ef">print</span>(i<span style="color:#f92672">.</span>name)
+    <span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> i<span style="color:#f92672">.</span>grades:
+        <span style="color:#66d9ef">print</span>(k<span style="color:#f92672">.</span>grade)
+        
 <span style="color:#75715e"># 多访问一</span>
-stu<span style="color:#f92672">=</span>B<span style="color:#f92672">.</span>query<span style="color:#f92672">.</span>filter(id<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>first()
-<span style="color:#66d9ef">print</span>(stu<span style="color:#f92672">.</span>B_age,stu<span style="color:#f92672">.</span>BB<span style="color:#f92672">.</span>a1<span style="color:#f92672">.</span>id) <span style="color:#75715e">#需要通过A表中的bockref中的值访问</span>
-</code></pre></div><h3 id="多对多表设置关联">多对多表设置关联<a hidden class="anchor" aria-hidden="true" href="#多对多表设置关联">#</a></h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">暂未写入
+gra<span style="color:#f92672">=</span>Grade<span style="color:#f92672">.</span>query<span style="color:#f92672">.</span>filter_by(student_id <span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span>)<span style="color:#f92672">.</span>all()
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> gra:
+    <span style="color:#66d9ef">print</span>(i<span style="color:#f92672">.</span>grade,i<span style="color:#f92672">.</span>student<span style="color:#f92672">.</span>name)
+</code></pre></div><h2 id="多对多表设置关联">多对多表设置关联<a hidden class="anchor" aria-hidden="true" href="#多对多表设置关联">#</a></h2>
+<h2 id="表">表<a hidden class="anchor" aria-hidden="true" href="#表">#</a></h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 学生可以存在多个课程，课程可以存在多个学生。多对多关系</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Student</span>(db<span style="color:#f92672">.</span>Model):
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    学生表
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    __tablename__ <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;student&#39;</span>
+    id <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>Column(db<span style="color:#f92672">.</span>Integer, primary_key<span style="color:#f92672">=</span>True)
+    name <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>Column(db<span style="color:#f92672">.</span>String(<span style="color:#ae81ff">100</span>))
+    gender <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>Column(db<span style="color:#f92672">.</span>String(<span style="color:#ae81ff">100</span>))
+    phone <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>Column(db<span style="color:#f92672">.</span>String(<span style="color:#ae81ff">100</span>))
+    grades <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>relationship(<span style="color:#e6db74">&#34;Grade&#34;</span>, backref<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;student&#34;</span>)
+    course <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>relationship(<span style="color:#e6db74">&#34;Course&#34;</span>, secondary<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;student_to_course&#34;</span>, backref<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;students&#34;</span>)
+    <span style="color:#75715e"># secondar比一对多多了这个参数，中间表参数</span>
+    <span style="color:#75715e"># backref可以随便填，反向表获取使用</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">StudentToCourse</span>(db<span style="color:#f92672">.</span>Model):
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    中间表放外键
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    __tablename__ <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;student_to_course&#39;</span>
+    id <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>Column(db<span style="color:#f92672">.</span>Integer, primary_key<span style="color:#f92672">=</span>True)
+    student_id <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>Column(db<span style="color:#f92672">.</span>String(<span style="color:#ae81ff">100</span>), db<span style="color:#f92672">.</span>ForeignKey(<span style="color:#e6db74">&#34;student.id&#34;</span>)) <span style="color:#75715e">#外键，数据库存在此字段</span>
+    course_id <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>Column(db<span style="color:#f92672">.</span>String(<span style="color:#ae81ff">100</span>), db<span style="color:#f92672">.</span>ForeignKey(<span style="color:#e6db74">&#34;course.id&#34;</span>)) <span style="color:#75715e">#外键，数据库存在此字段</span>
+
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Course</span>(db<span style="color:#f92672">.</span>Model):
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    课程表
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    __tablename__ <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;course&#39;</span>
+
+    id <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>Column(db<span style="color:#f92672">.</span>Integer, primary_key<span style="color:#f92672">=</span>True)
+    name <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>Column(db<span style="color:#f92672">.</span>String(<span style="color:#ae81ff">100</span>))
+    grades <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>relationship(<span style="color:#e6db74">&#34;Grade&#34;</span>, backref<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;course&#34;</span>)
+    techer_id <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>Column(db<span style="color:#f92672">.</span>String(<span style="color:#ae81ff">100</span>), db<span style="color:#f92672">.</span>ForeignKey(<span style="color:#e6db74">&#34;techer.id&#34;</span>))
+</code></pre></div><h3 id="添加关联数据">添加关联数据<a hidden class="anchor" aria-hidden="true" href="#添加关联数据">#</a></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 多对多，给一个学生增加课程</span>
+<span style="color:#75715e"># 先查询出学生</span>
+stu <span style="color:#f92672">=</span> Student<span style="color:#f92672">.</span>query<span style="color:#f92672">.</span>get(<span style="color:#ae81ff">1</span>)
+<span style="color:#66d9ef">print</span>(stu<span style="color:#f92672">.</span>name)
+<span style="color:#75715e"># 给这个学生加课程,关联会添加到中间表中。显示id都为1</span>
+cou <span style="color:#f92672">=</span> Course<span style="color:#f92672">.</span>query<span style="color:#f92672">.</span>filter(Course<span style="color:#f92672">.</span>id <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>all()
+stu<span style="color:#f92672">.</span>courses <span style="color:#f92672">=</span> cou
+db<span style="color:#f92672">.</span>session<span style="color:#f92672">.</span>add(stu)
+db<span style="color:#f92672">.</span>session<span style="color:#f92672">.</span>commit()
+
+<span style="color:#75715e"># 多对多增加关联，给多个学生增加课程</span>
+<span style="color:#75715e"># 查询学生表</span>
+stu <span style="color:#f92672">=</span> Student<span style="color:#f92672">.</span>query<span style="color:#f92672">.</span>filter(Student<span style="color:#f92672">.</span>id <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span>)<span style="color:#f92672">.</span>all()
+<span style="color:#66d9ef">print</span>(stu)
+<span style="color:#75715e"># 查询课程表</span>
+cou <span style="color:#f92672">=</span> Course<span style="color:#f92672">.</span>query<span style="color:#f92672">.</span>filter(Course<span style="color:#f92672">.</span>id <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>all()
+<span style="color:#66d9ef">print</span>(cou)
+
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> stu:
+    i<span style="color:#f92672">.</span>courses <span style="color:#f92672">=</span> cou
+    db<span style="color:#f92672">.</span>session<span style="color:#f92672">.</span>add(i)
+    db<span style="color:#f92672">.</span>session<span style="color:#f92672">.</span>commit()
+</code></pre></div><h3 id="查询关联数据">查询关联数据<a hidden class="anchor" aria-hidden="true" href="#查询关联数据">#</a></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#多对多查询，通过学生表查询课程表</span>
+stu<span style="color:#f92672">=</span>Student<span style="color:#f92672">.</span>query<span style="color:#f92672">.</span>get(<span style="color:#ae81ff">1</span>)
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> stu<span style="color:#f92672">.</span>courses:
+    <span style="color:#66d9ef">print</span>(i<span style="color:#f92672">.</span>name)
+
+    
+<span style="color:#75715e">#多对多查询，查询出来的对象不是一个列表。非列表通过课程表查询学生表</span>
+cou <span style="color:#f92672">=</span> Course<span style="color:#f92672">.</span>query<span style="color:#f92672">.</span>get(<span style="color:#ae81ff">2</span>)
+<span style="color:#66d9ef">print</span>(cou)
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> cou<span style="color:#f92672">.</span>students:
+    <span style="color:#66d9ef">print</span>(i<span style="color:#f92672">.</span>name)
+    
+<span style="color:#75715e">#多对多查询，查询出来的对象是一个列表。通过课程表查询学生表</span>
+cou <span style="color:#f92672">=</span> Course<span style="color:#f92672">.</span>query<span style="color:#f92672">.</span>filter(Course<span style="color:#f92672">.</span>name <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;语文&#34;</span>)<span style="color:#f92672">.</span>all()
+<span style="color:#66d9ef">print</span>(cou)
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> cou:
+    <span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> i<span style="color:#f92672">.</span>students:
+        <span style="color:#66d9ef">print</span>(k<span style="color:#f92672">.</span>name)
+
 </code></pre></div>
 
   </div>
