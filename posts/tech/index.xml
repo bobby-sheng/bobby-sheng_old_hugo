@@ -8,6 +8,15 @@
     <language>zh-cn</language>
     <lastBuildDate>Tue, 07 Jun 2022 16:15:04 +0800</lastBuildDate><atom:link href="https://bobby-sheng.github.io/posts/tech/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>flask-SQLAlchemy数据库</title>
+      <link>https://bobby-sheng.github.io/posts/tech/flask_sqlalchemy%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+      <pubDate>Sun, 30 Oct 2022 14:18:42 +0800</pubDate>
+      
+      <guid>https://bobby-sheng.github.io/posts/tech/flask_sqlalchemy%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+      <description>简介 flask-SQLAlchemy对sqlite数据库的连接与增删改查 flask 与sqlite的创建与连接 #参考地址 https://www.py.cn/kuangjia/flask/24552.html 单表操作 增加 #单个数据增加 s</description>
+    </item>
+    
+    <item>
       <title>Pytest详解</title>
       <link>https://bobby-sheng.github.io/posts/tech/pytest%E8%AF%A6%E8%A7%A3/</link>
       <pubDate>Thu, 25 Aug 2022 14:18:42 +0800</pubDate>
