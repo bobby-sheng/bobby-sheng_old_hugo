@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>flask-SQLAlchemy数据库 | 张圣波&amp;博客</title>
+<title>Flask_SQLAlchemy数据库 | 张圣波&amp;博客</title>
 <meta name="keywords" content="flask">
 <meta name="description" content="简介 flask-SQLAlchemy对sqlite数据库的连接与增删改查 flask 与sqlite的创建与连接 #参考地址 https://www.py.cn/kuangjia/flask/24552.html 单表操作 增加 #单个数据增加 s">
 <meta name="author" content="bobby">
@@ -69,15 +69,15 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-<meta property="og:title" content="flask-SQLAlchemy数据库" />
+<meta property="og:title" content="Flask_SQLAlchemy数据库" />
 <meta property="og:description" content="简介 flask-SQLAlchemy对sqlite数据库的连接与增删改查 flask 与sqlite的创建与连接 #参考地址 https://www.py.cn/kuangjia/flask/24552.html 单表操作 增加 #单个数据增加 s" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://bobby-sheng.github.io/posts/tech/flask_sqlalchemy%E6%95%B0%E6%8D%AE%E5%BA%93/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-10-30T14:18:42&#43;08:00" />
-<meta property="article:modified_time" content="2022-10-30T14:18:42&#43;08:00" />
+<meta property="article:published_time" content="2022-10-30T21:05:49&#43;08:00" />
+<meta property="article:modified_time" content="2022-10-30T21:05:49&#43;08:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="flask-SQLAlchemy数据库"/>
+<meta name="twitter:title" content="Flask_SQLAlchemy数据库"/>
 <meta name="twitter:description" content="简介 flask-SQLAlchemy对sqlite数据库的连接与增删改查 flask 与sqlite的创建与连接 #参考地址 https://www.py.cn/kuangjia/flask/24552.html 单表操作 增加 #单个数据增加 s"/>
 
 
@@ -101,7 +101,7 @@ if (!doNotTrack) {
     {
       "@type": "ListItem",
       "position":  4 ,
-      "name": "flask-SQLAlchemy数据库",
+      "name": "Flask_SQLAlchemy数据库",
       "item": "https://bobby-sheng.github.io/posts/tech/flask_sqlalchemy%E6%95%B0%E6%8D%AE%E5%BA%93/"
     }
   ]
@@ -111,17 +111,17 @@ if (!doNotTrack) {
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "flask-SQLAlchemy数据库",
-  "name": "flask-SQLAlchemy数据库",
+  "headline": "Flask_SQLAlchemy数据库",
+  "name": "Flask_SQLAlchemy数据库",
   "description": "简介 flask-SQLAlchemy对sqlite数据库的连接与增删改查 flask 与sqlite的创建与连接 #参考地址 https://www.py.cn/kuangjia/flask/24552.html 单表操作 增加 #单个数据增加 s",
   "keywords": [
     "flask"
   ],
-  "articleBody": "简介 flask-SQLAlchemy对sqlite数据库的连接与增删改查 flask 与sqlite的创建与连接 #参考地址 https://www.py.cn/kuangjia/flask/24552.html 单表操作 增加 #单个数据增加 s1=表(列=值，列=值) db.session.add(s1) db.session.commit() #除了查询，都要commit #多个数据增加 s1=表(列=值，列=值) s2=表(列=值，列=值) db.session.add.all(s1,s2) db.session.commit() #除了查询，都要commit 查询 #单个数据查询id为1的数据表，返回一个对象 stu=表名.query.get(1) print(表.列) #查询表中所有数据，返回一个列表，值为数据对象 stu=表名.query.all() for i in stu: print(表.列) #打印表所有此字段值 #条件查询，返回一个列表，值为符合条件的数据 stu=表名.query.filter(列=值) #后面可以接.all() 表示取全部，.first() 表示取第一个值 for i in stu: print(表.列) #打印列表中数据所有此字段值 #模糊条件查询，返回一个列表，值为符合条件的数据 stu=表名.query.filter_by(列=值) #后面可以接.all() 表示取全部，.first() 表示取第一个值，还可以继续接条件.filter(列=值)，或者.delete for i in stu: print(表.列) #打印列表中数据所有此字段值 修改 #第一种，直接拼接在查询后面 stu=表名.query.filter(列=值).update({\"列\":\"值\"}) print(stu) #返回修改了多少条数据的数量 db.session.commit() #除了查询，都要commit #第二种 改单个 stu=表名.query.filter(列=值).first() stu.列=新值 #直接赋予新值 db.session.add(s1) #修改值的需要增加add方法 db.session.commit() #除了查询，都要commit #第二种 循环改多个 stu=表名.query.filter(列=值).all() for i in stu: i.列=新值 #直接赋予新值 db.session.add(s1) db.session.commit() #除了查询，都要commit 删除 #第一种，直接拼接在查询后面 stu=表名.query.filter(列=值).delete({\"列\":\"值\"}) print(stu) #返回修改了多少条数据的数量 db.session.commit() #除了查询，都要commit 多表操作 表设置关联 # 多表操作必须创建关联，假设A表关联B表，A表中需要创建列关联B，一放使用db.relationship(\"B表名\",bockref(\"A表\"))。多方B表需要创建外键db.ForeignKey(\"所属表中的关联字段\")关联A表 #db.relationship是和db.ForeignKey配合使用的，用来描述一对多关系。 #在一对多中，db.ForeignKey写在“多”方，关联“一”方的某一个属性。 #db.relationship写在“一”方，“一”方通过该属性可以取出一个列表，列表元素为所有对应的“多”方的对象。 #db.relationship中的backref是“多”方使用的。“多”方通过该属性（即backref传入的字符串）可以访问到其对应的“一”方对象。 class A(db.Model): #一方 id = db.Column(db.String(50), primary_key=True) A_age = db.Column(db.String(50)) BB=db.relationship(\"B\",bockref(\"a1\")) #给到B表的可访问字段,填充的字段是否需要一样暂时未知 class B(db.Model): #多方 id = db.Column(db.String(50), primary_key=True) B_age = db.Column(db.String(50)) AB = db.Columu(db.String,db.ForeignKey(\"a.id\")) #外键，关联到A表中。 查询 # 一访问多 stu=A.query.filter(A_age=1).first() print(stu.A_age,stu.BB.B_age) # 通过ForeignKey 字段名访问 # 多访问一 stu=B.query.filter(id=1).first() print(stu.B_age,stu.BB.a1.id) #需要通过A表中的bockref中的值访问 ",
-  "wordCount" : "1368",
+  "articleBody": "简介 flask-SQLAlchemy对sqlite数据库的连接与增删改查 flask 与sqlite的创建与连接 #参考地址 https://www.py.cn/kuangjia/flask/24552.html 单表操作 增加 #单个数据增加 s1=表(列=值，列=值) db.session.add(s1) db.session.commit() #除了查询，都要commit #多个数据增加 s1=表(列=值，列=值) s2=表(列=值，列=值) db.session.add.all(s1,s2) db.session.commit() #除了查询，都要commit 查询 #单个数据查询id为1的数据表，返回一个对象 stu=表名.query.get(1) print(表.列) #查询表中所有数据，返回一个列表，值为数据对象 stu=表名.query.all() for i in stu: print(表.列) #打印表所有此字段值 #条件查询，返回一个列表，值为符合条件的数据 stu=表名.query.filter(列=值) #后面可以接.all() 表示取全部，.first() 表示取第一个值 for i in stu: print(表.列) #打印列表中数据所有此字段值 #模糊条件查询，返回一个列表，值为符合条件的数据 stu=表名.query.filter_by(列=值) #后面可以接.all() 表示取全部，.first() 表示取第一个值，还可以继续接条件.filter(列=值)，或者.delete for i in stu: print(表.列) #打印列表中数据所有此字段值 修改 #第一种，直接拼接在查询后面 stu=表名.query.filter(列=值).update({\"列\":\"值\"}) print(stu) #返回修改了多少条数据的数量 db.session.commit() #除了查询，都要commit #第二种 改单个 stu=表名.query.filter(列=值).first() stu.列=新值 #直接赋予新值 db.session.add(s1) #修改值的需要增加add方法 db.session.commit() #除了查询，都要commit #第二种 循环改多个 stu=表名.query.filter(列=值).all() for i in stu: i.列=新值 #直接赋予新值 db.session.add(s1) db.session.commit() #除了查询，都要commit 删除 #第一种，直接拼接在查询后面 stu=表名.query.filter(列=值).delete({\"列\":\"值\"}) print(stu) #返回修改了多少条数据的数量 db.session.commit() #除了查询，都要commit 多表操作 一对多表设置关联 # 多表操作必须创建关联，假设A表关联B表，A表中需要创建列关联B，一放使用db.relationship(\"B表名\",bockref(\"A表\"))。多方B表需要创建外键db.ForeignKey(\"所属表中的关联字段\")关联A表 #db.relationship是和db.ForeignKey配合使用的，用来描述一对多关系。 #在一对多中，db.ForeignKey写在“多”方，关联“一”方的某一个属性。 #db.relationship写在“一”方，“一”方通过该属性可以取出一个列表，列表元素为所有对应的“多”方的对象。 #db.relationship中的backref是“多”方使用的。“多”方通过该属性（即backref传入的字符串）可以访问到其对应的“一”方对象。 class A(db.Model): #一方 id = db.Column(db.String(50), primary_key=True) A_age = db.Column(db.String(50)) BB=db.relationship(\"B\",bockref(\"a1\")) #给到B表的可访问字段,填充的字段是否需要一样暂时未知 class B(db.Model): #多方 id = db.Column(db.String(50), primary_key=True) B_age = db.Column(db.String(50)) AB = db.Columu(db.String,db.ForeignKey(\"a.id\")) #外键，关联到A表中。 查询 # 一访问多 stu=A.query.filter(A_age=1).first() print(stu.A_age,stu.BB.B_age) # 通过ForeignKey 字段名访问 # 多访问一 stu=B.query.filter(id=1).first() print(stu.B_age,stu.BB.a1.id) #需要通过A表中的bockref中的值访问 多对多表设置关联 暂未写入 ",
+  "wordCount" : "1383",
   "inLanguage": "en",
-  "datePublished": "2022-10-30T14:18:42+08:00",
-  "dateModified": "2022-10-30T14:18:42+08:00",
+  "datePublished": "2022-10-30T21:05:49+08:00",
+  "dateModified": "2022-10-30T21:05:49+08:00",
   "author":{
     "@type": "Person",
     "name": "bobby"
@@ -222,9 +222,9 @@ if (!doNotTrack) {
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://bobby-sheng.github.io">Home</a>&nbsp;»&nbsp;<a href="https://bobby-sheng.github.io/posts/">文章</a>&nbsp;»&nbsp;<a href="https://bobby-sheng.github.io/posts/tech/">笔记</a></div>
     <h1 class="post-title">
-      flask-SQLAlchemy数据库
+      Flask_SQLAlchemy数据库
     </h1>
-    <div class="post-meta"><span title='2022-10-30 14:18:42 +0800 CST'>2022-10-30</span>&nbsp;·&nbsp;bobby
+    <div class="post-meta"><span title='2022-10-30 21:05:49 +0800 CST'>2022-10-30</span>&nbsp;·&nbsp;bobby
 
 </div>
   </header> <aside id="toc-container" class="toc-container wide">
@@ -253,9 +253,11 @@ if (!doNotTrack) {
                         <a href="#%e5%a4%9a%e8%a1%a8%e6%93%8d%e4%bd%9c" aria-label="多表操作">多表操作</a><ul>
                             
                     <li>
-                        <a href="#%e8%a1%a8%e8%ae%be%e7%bd%ae%e5%85%b3%e8%81%94" aria-label="表设置关联">表设置关联</a></li>
+                        <a href="#%e4%b8%80%e5%af%b9%e5%a4%9a%e8%a1%a8%e8%ae%be%e7%bd%ae%e5%85%b3%e8%81%94" aria-label="一对多表设置关联">一对多表设置关联</a></li>
                     <li>
-                        <a href="#%e6%9f%a5%e8%af%a2-1" aria-label="查询">查询</a>
+                        <a href="#%e6%9f%a5%e8%af%a2-1" aria-label="查询">查询</a></li>
+                    <li>
+                        <a href="#%e5%a4%9a%e5%af%b9%e5%a4%9a%e8%a1%a8%e8%ae%be%e7%bd%ae%e5%85%b3%e8%81%94" aria-label="多对多表设置关联">多对多表设置关联</a>
                     </li>
                 </ul>
                 </li>
@@ -383,7 +385,7 @@ stu<span style="color:#f92672">=</span><span style="color:#960050;background-col
 <span style="color:#66d9ef">print</span>(stu) <span style="color:#75715e">#返回修改了多少条数据的数量</span>
 db<span style="color:#f92672">.</span>session<span style="color:#f92672">.</span>commit() <span style="color:#75715e">#除了查询，都要commit</span>
 </code></pre></div><h2 id="多表操作">多表操作<a hidden class="anchor" aria-hidden="true" href="#多表操作">#</a></h2>
-<h3 id="表设置关联">表设置关联<a hidden class="anchor" aria-hidden="true" href="#表设置关联">#</a></h3>
+<h3 id="一对多表设置关联">一对多表设置关联<a hidden class="anchor" aria-hidden="true" href="#一对多表设置关联">#</a></h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 多表操作必须创建关联，假设A表关联B表，A表中需要创建列关联B，一放使用db.relationship(&#34;B表名&#34;,bockref(&#34;A表&#34;))。多方B表需要创建外键db.ForeignKey(&#34;所属表中的关联字段&#34;)关联A表</span>
 <span style="color:#75715e">#db.relationship是和db.ForeignKey配合使用的，用来描述一对多关系。</span>
 <span style="color:#75715e">#在一对多中，db.ForeignKey写在“多”方，关联“一”方的某一个属性。</span>
@@ -406,6 +408,8 @@ stu<span style="color:#f92672">=</span>A<span style="color:#f92672">.</span>quer
 <span style="color:#75715e"># 多访问一</span>
 stu<span style="color:#f92672">=</span>B<span style="color:#f92672">.</span>query<span style="color:#f92672">.</span>filter(id<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>first()
 <span style="color:#66d9ef">print</span>(stu<span style="color:#f92672">.</span>B_age,stu<span style="color:#f92672">.</span>BB<span style="color:#f92672">.</span>a1<span style="color:#f92672">.</span>id) <span style="color:#75715e">#需要通过A表中的bockref中的值访问</span>
+</code></pre></div><h3 id="多对多表设置关联">多对多表设置关联<a hidden class="anchor" aria-hidden="true" href="#多对多表设置关联">#</a></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">暂未写入
 </code></pre></div>
 
   </div>
