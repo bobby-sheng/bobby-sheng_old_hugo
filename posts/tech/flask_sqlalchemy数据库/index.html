@@ -240,7 +240,8 @@ if (!doNotTrack) {
                     <li>
                         <a href="#flask-%e4%b8%8esqlite%e7%9a%84%e5%88%9b%e5%bb%ba%e4%b8%8e%e8%bf%9e%e6%8e%a5" aria-label="flask 与sqlite的创建与连接">flask 与sqlite的创建与连接</a></li>
                     <li>
-                        <a href="#%e5%8d%95%e8%a1%a8%e6%93%8d%e4%bd%9c" aria-label="单表操作">单表操作</a></li>
+                        <a href="#%e5%8d%95%e8%a1%a8%e6%93%8d%e4%bd%9c" aria-label="单表操作">单表操作</a><ul>
+                            
                     <li>
                         <a href="#%e5%a2%9e%e5%8a%a0" aria-label="增加">增加</a></li>
                     <li>
@@ -248,7 +249,8 @@ if (!doNotTrack) {
                     <li>
                         <a href="#%e4%bf%ae%e6%94%b9" aria-label="修改">修改</a></li>
                     <li>
-                        <a href="#%e5%88%a0%e9%99%a4" aria-label="删除">删除</a></li>
+                        <a href="#%e5%88%a0%e9%99%a4" aria-label="删除">删除</a></li></ul>
+                    </li>
                     <li>
                         <a href="#%e5%a4%9a%e8%a1%a8%e6%93%8d%e4%bd%9c" aria-label="多表操作">多表操作</a><ul>
                             
@@ -332,7 +334,7 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#参考地址</span>
 https:<span style="color:#f92672">//</span>www<span style="color:#f92672">.</span>py<span style="color:#f92672">.</span>cn<span style="color:#f92672">/</span>kuangjia<span style="color:#f92672">/</span>flask<span style="color:#f92672">/</span><span style="color:#ae81ff">24552.</span>html
 </code></pre></div><h2 id="单表操作">单表操作<a hidden class="anchor" aria-hidden="true" href="#单表操作">#</a></h2>
-<h2 id="增加">增加<a hidden class="anchor" aria-hidden="true" href="#增加">#</a></h2>
+<h3 id="增加">增加<a hidden class="anchor" aria-hidden="true" href="#增加">#</a></h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#单个数据增加</span>
 s1<span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">表</span>(<span style="color:#960050;background-color:#1e0010">列</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">值，列</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">值</span>)
 db<span style="color:#f92672">.</span>session<span style="color:#f92672">.</span>add(s1)
@@ -342,7 +344,7 @@ s1<span style="color:#f92672">=</span><span style="color:#960050;background-colo
 s2<span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">表</span>(<span style="color:#960050;background-color:#1e0010">列</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">值，列</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">值</span>)
 db<span style="color:#f92672">.</span>session<span style="color:#f92672">.</span>add<span style="color:#f92672">.</span>all(s1,s2)
 db<span style="color:#f92672">.</span>session<span style="color:#f92672">.</span>commit() <span style="color:#75715e">#除了查询，都要commit</span>
-</code></pre></div><h2 id="查询">查询<a hidden class="anchor" aria-hidden="true" href="#查询">#</a></h2>
+</code></pre></div><h3 id="查询">查询<a hidden class="anchor" aria-hidden="true" href="#查询">#</a></h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#单个数据查询id为1的数据表，返回一个对象</span>
 stu<span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">表名</span><span style="color:#f92672">.</span>query<span style="color:#f92672">.</span>get(<span style="color:#ae81ff">1</span>)
 <span style="color:#66d9ef">print</span>(<span style="color:#960050;background-color:#1e0010">表</span><span style="color:#f92672">.</span><span style="color:#960050;background-color:#1e0010">列</span>)
@@ -361,7 +363,7 @@ stu<span style="color:#f92672">=</span><span style="color:#960050;background-col
 stu<span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">表名</span><span style="color:#f92672">.</span>query<span style="color:#f92672">.</span>filter_by(<span style="color:#960050;background-color:#1e0010">列</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">值</span>) <span style="color:#75715e">#后面可以接.all() 表示取全部，.first() 表示取第一个值，还可以继续接条件.filter(列=值)，或者.delete</span>
 <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> stu:
     <span style="color:#66d9ef">print</span>(<span style="color:#960050;background-color:#1e0010">表</span><span style="color:#f92672">.</span><span style="color:#960050;background-color:#1e0010">列</span>) <span style="color:#75715e">#打印列表中数据所有此字段值</span>
-</code></pre></div><h2 id="修改">修改<a hidden class="anchor" aria-hidden="true" href="#修改">#</a></h2>
+</code></pre></div><h3 id="修改">修改<a hidden class="anchor" aria-hidden="true" href="#修改">#</a></h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#第一种，直接拼接在查询后面</span>
 stu<span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">表名</span><span style="color:#f92672">.</span>query<span style="color:#f92672">.</span>filter(<span style="color:#960050;background-color:#1e0010">列</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">值</span>)<span style="color:#f92672">.</span>update({<span style="color:#e6db74">&#34;列&#34;</span>:<span style="color:#e6db74">&#34;值&#34;</span>})
 <span style="color:#66d9ef">print</span>(stu) <span style="color:#75715e">#返回修改了多少条数据的数量</span>
@@ -379,7 +381,7 @@ stu<span style="color:#f92672">=</span><span style="color:#960050;background-col
     i<span style="color:#f92672">.</span><span style="color:#960050;background-color:#1e0010">列</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">新值</span> <span style="color:#75715e">#直接赋予新值</span>
     db<span style="color:#f92672">.</span>session<span style="color:#f92672">.</span>add(s1)
 db<span style="color:#f92672">.</span>session<span style="color:#f92672">.</span>commit() <span style="color:#75715e">#除了查询，都要commit</span>
-</code></pre></div><h2 id="删除">删除<a hidden class="anchor" aria-hidden="true" href="#删除">#</a></h2>
+</code></pre></div><h3 id="删除">删除<a hidden class="anchor" aria-hidden="true" href="#删除">#</a></h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#第一种，直接拼接在查询后面</span>
 stu<span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">表名</span><span style="color:#f92672">.</span>query<span style="color:#f92672">.</span>filter(<span style="color:#960050;background-color:#1e0010">列</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">值</span>)<span style="color:#f92672">.</span>delete({<span style="color:#e6db74">&#34;列&#34;</span>:<span style="color:#e6db74">&#34;值&#34;</span>})
 <span style="color:#66d9ef">print</span>(stu) <span style="color:#75715e">#返回修改了多少条数据的数量</span>
