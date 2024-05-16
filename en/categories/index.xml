@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Categories on Bobby Blog</title>
-    <link>https://bobby-sheng.github.io/BobbySheng.github.io/en/categories/</link>
+    <link>https://bobby-sheng.github.io/en/categories/</link>
     <description>Recent content in Categories on Bobby Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://bobby-sheng.github.io/BobbySheng.github.io/en/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language><atom:link href="https://bobby-sheng.github.io/en/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

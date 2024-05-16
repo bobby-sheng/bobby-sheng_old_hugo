@@ -2,134 +2,134 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Bobby Blog</title>
-    <link>https://bobby-sheng.github.io/BobbySheng.github.io/en/</link>
+    <link>https://bobby-sheng.github.io/en/</link>
     <description>Recent content on Bobby Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 29 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://bobby-sheng.github.io/BobbySheng.github.io/en/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 29 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://bobby-sheng.github.io/en/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【置顶】Hello, hugo!</title>
-      <link>https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/blog/hello-hugo/</link>
+      <link>https://bobby-sheng.github.io/en/posts/blog/hello-hugo/</link>
       <pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/blog/hello-hugo/</guid>
+      <guid>https://bobby-sheng.github.io/en/posts/blog/hello-hugo/</guid>
       <description>记录 wordpress 迁移至 hugo&#43;papermod 的过程, 包含环境搭建、博客美化、功能实现、速度优化等……</description>
     </item>
     
     <item>
       <title>windows | miniconda 配置 python 虚拟环境</title>
-      <link>https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/tech/windows-miniconda/</link>
+      <link>https://bobby-sheng.github.io/en/posts/tech/windows-miniconda/</link>
       <pubDate>Mon, 07 Aug 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/tech/windows-miniconda/</guid>
+      <guid>https://bobby-sheng.github.io/en/posts/tech/windows-miniconda/</guid>
       <description>0 前言 python 虚拟环境的重要性已经无需多言了, 目前所有支持 python 虚拟环境的工具中最好用的应该就是 conda 了, 最重要的一点是可以一键创建不同版本的 python 环境以适应不同的需求. Anaconda 比较臃肿, 本文使用无 GUI 的 miniconda. 环境: win10 miniconda3-py11-23.5.2-0 1 安装 安装前需要确认一下系统及用户的环境变量中不要存在中文, 在 CMD 中直接执行 path 或者 git-bash 中执行 echo</description>
     </item>
     
     <item>
       <title>python | 鬼谷子数学问题</title>
-      <link>https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/tech/python-logic-problem-guiguzi/</link>
+      <link>https://bobby-sheng.github.io/en/posts/tech/python-logic-problem-guiguzi/</link>
       <pubDate>Mon, 27 Feb 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/tech/python-logic-problem-guiguzi/</guid>
+      <guid>https://bobby-sheng.github.io/en/posts/tech/python-logic-problem-guiguzi/</guid>
       <description>一道乍看毫无逻辑，细想却很有趣的逻辑题</description>
     </item>
     
     <item>
       <title>python | 批量修改目录下文件名</title>
-      <link>https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/tech/python-rename-file/</link>
+      <link>https://bobby-sheng.github.io/en/posts/tech/python-rename-file/</link>
       <pubDate>Wed, 27 Jul 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/tech/python-rename-file/</guid>
+      <guid>https://bobby-sheng.github.io/en/posts/tech/python-rename-file/</guid>
       <description>将 windows 中某个目录下的所有文件中的下划线_替换为中划线-</description>
     </item>
     
     <item>
       <title>docker 部署 piclist</title>
-      <link>https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/blog/docker-deploy-piclist/</link>
+      <link>https://bobby-sheng.github.io/en/posts/blog/docker-deploy-piclist/</link>
       <pubDate>Thu, 05 May 2022 00:18:23 +0800</pubDate>
       
-      <guid>https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/blog/docker-deploy-piclist/</guid>
+      <guid>https://bobby-sheng.github.io/en/posts/blog/docker-deploy-piclist/</guid>
       <description>介绍如何使用 docker 部署 piclist 实现 obsidian 远程上传图片至阿里云 OSS 图床</description>
     </item>
     
     <item>
       <title>python | 修改 pip 源</title>
-      <link>https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/tech/python-change-pip-repo/</link>
+      <link>https://bobby-sheng.github.io/en/posts/tech/python-change-pip-repo/</link>
       <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/tech/python-change-pip-repo/</guid>
+      <guid>https://bobby-sheng.github.io/en/posts/tech/python-change-pip-repo/</guid>
       <description>1 清单 地址 中国科学技术大学 https://pypi.mirrors.ustc.edu.cn/simple 清华 https://pypi.tuna.tsinghua.edu.cn/simple 豆瓣 http://pypi.douban.com/simple 华中理工大学 http://pypi.hustunique.com/simple 山东理工大学 http://pypi.sdutlinux.org/simple 阿里云 https://mirrors.aliyun.com/pypi/simple/ 2 linux 环境 mkdir ~/.pip cat &amp;gt; ~/.pip/pip.conf &amp;lt;&amp;lt; EOF [global] trusted-host=mirrors.aliyun.com index-url=https://mirrors.aliyun.com/pypi/simple/ EOF 3 windows 环境 打开 cmd 使用 dos 命令 set 找到 userprofile 路径，在该路径下创建 pip 文件夹，在 pip 文件夹下创建 pip.ini pip.ini 具体配置 [global] timeout = 6000 index-url = https://pypi.tuna.tsinghua.edu.cn/simple trusted-host = pypi.tuna.tsinghua.edu.cn 以上</description>
     </item>
     
     <item>
       <title>🙋🏻‍♂️ 关于</title>
-      <link>https://bobby-sheng.github.io/BobbySheng.github.io/en/about/</link>
+      <link>https://bobby-sheng.github.io/en/about/</link>
       <pubDate>Sat, 06 Nov 2021 14:57:28 +0800</pubDate>
       
-      <guid>https://bobby-sheng.github.io/BobbySheng.github.io/en/about/</guid>
+      <guid>https://bobby-sheng.github.io/en/about/</guid>
       <description>🏡 关于本站 本博客主要记录一些学习生活，和一些个人觉得值得记录的问题及其解决办法。如果本博客能有哪些内容帮助到了你，那也是极好的。 👦🏻 博主是谁 网络时代的素质教育漏网之鱼 | 晚睡协会常任理事 | 国家级抬杠运动员 | 中国驰名窝里横 | 国宝级老污龟 | 超水平怼人大师 | 一秒入戏准影帝 精通CSS、Ja</description>
     </item>
     
     <item>
       <title>🤝 友链</title>
-      <link>https://bobby-sheng.github.io/BobbySheng.github.io/en/links/</link>
+      <link>https://bobby-sheng.github.io/en/links/</link>
       <pubDate>Sat, 06 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://bobby-sheng.github.io/BobbySheng.github.io/en/links/</guid>
+      <guid>https://bobby-sheng.github.io/en/links/</guid>
       <description>👉友链为随机顺序 Bobby Blog 我的 wordpress 站点 cuikx&amp;#39;s blog cuikx&amp;#39;s blog Sulv&amp;#39;s Blog 一个记录技术、阅读、生活的博客 陈桂林博客 成功最有效的方法就是向有经验的人学习！ 黄忠德的博客 DevOps,SRE,Python,Golang程序员,开源爱好者 阿虚同学的储物间 收集了很多实用网站 老生杂谈的 IT 人 老生杂谈，后继有人。 Yunyi’s</description>
     </item>
     
     <item>
       <title>💬 说说</title>
-      <link>https://bobby-sheng.github.io/BobbySheng.github.io/en/talk/</link>
+      <link>https://bobby-sheng.github.io/en/talk/</link>
       <pubDate>Tue, 31 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://bobby-sheng.github.io/BobbySheng.github.io/en/talk/</guid>
+      <guid>https://bobby-sheng.github.io/en/talk/</guid>
       <description>胡言乱语</description>
     </item>
     
     <item>
       <title>wordpress | 迁移到 docker</title>
-      <link>https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/blog/wordpress-to-docker/</link>
+      <link>https://bobby-sheng.github.io/en/posts/blog/wordpress-to-docker/</link>
       <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/blog/wordpress-to-docker/</guid>
+      <guid>https://bobby-sheng.github.io/en/posts/blog/wordpress-to-docker/</guid>
       <description>记录从阿里云轻量应用服务器 (wordpress 应用) 迁移到 docker 部署，并针对博客的一些优化</description>
     </item>
     
     <item>
       <title>markdown 图片存储方案 | typora &#43; picgo &#43; 七牛云</title>
-      <link>https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/blog/typora-picgo-qiniu-upload-image/</link>
+      <link>https://bobby-sheng.github.io/en/posts/blog/typora-picgo-qiniu-upload-image/</link>
       <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/blog/typora-picgo-qiniu-upload-image/</guid>
+      <guid>https://bobby-sheng.github.io/en/posts/blog/typora-picgo-qiniu-upload-image/</guid>
       <description>在使用 markdown 写作的过程中，图片的存储是困扰很多人的一个问题，分享下我目前采用的 typora &#43; picgo &#43; 七牛云 的图床配置流程</description>
     </item>
     
     <item>
       <title>wordpress | 加载图片失败</title>
-      <link>https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/blog/wordpress-load-image-failed/</link>
+      <link>https://bobby-sheng.github.io/en/posts/blog/wordpress-load-image-failed/</link>
       <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/blog/wordpress-load-image-failed/</guid>
+      <guid>https://bobby-sheng.github.io/en/posts/blog/wordpress-load-image-failed/</guid>
       <description>1 现象 博客加载不出来我在七牛云的图片资源 使用浏览器直接访问图片 url 却是可以成功的 我将之前 csdn 的博客迁移到了 wordpress，图片外链地址就是 csdn 的，都可以正常加载。 使用浏览器直接访问图片 url 却是可以成功的 我将之前 csdn 的博客迁移到了 wordpress，图片外链地址就是 csdn 的，都可以正常加载。</description>
     </item>
     
     <item>
       <title>wordpress | 添加 icp 备案号</title>
-      <link>https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/blog/wordpress-add-icp/</link>
+      <link>https://bobby-sheng.github.io/en/posts/blog/wordpress-add-icp/</link>
       <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/blog/wordpress-add-icp/</guid>
+      <guid>https://bobby-sheng.github.io/en/posts/blog/wordpress-add-icp/</guid>
       <description>记录wordpress中如何添加icp备案号</description>
     </item>
     
     <item>
       <title>wordpress | 配置免费 ssl 证书和 https 强制跳转</title>
-      <link>https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/blog/wordpress-ssl/</link>
+      <link>https://bobby-sheng.github.io/en/posts/blog/wordpress-ssl/</link>
       <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/blog/wordpress-ssl/</guid>
+      <guid>https://bobby-sheng.github.io/en/posts/blog/wordpress-ssl/</guid>
       <description>介绍如何为阿里轻量应用服务器 (wordpress 应用) 配置 ssl 证书，开启 https 访问且实现https 强制跳转</description>
     </item>
     

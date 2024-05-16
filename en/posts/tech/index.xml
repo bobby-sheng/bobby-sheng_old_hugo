@@ -2,44 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>👨🏻‍💻 技术 on Bobby Blog</title>
-    <link>https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/tech/</link>
+    <link>https://bobby-sheng.github.io/en/posts/tech/</link>
     <description>Recent content in 👨🏻‍💻 技术 on Bobby Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 29 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 29 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://bobby-sheng.github.io/en/posts/tech/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>windows | miniconda 配置 python 虚拟环境</title>
-      <link>https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/tech/windows-miniconda/</link>
+      <link>https://bobby-sheng.github.io/en/posts/tech/windows-miniconda/</link>
       <pubDate>Mon, 07 Aug 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/tech/windows-miniconda/</guid>
+      <guid>https://bobby-sheng.github.io/en/posts/tech/windows-miniconda/</guid>
       <description>0 前言 python 虚拟环境的重要性已经无需多言了, 目前所有支持 python 虚拟环境的工具中最好用的应该就是 conda 了, 最重要的一点是可以一键创建不同版本的 python 环境以适应不同的需求. Anaconda 比较臃肿, 本文使用无 GUI 的 miniconda. 环境: win10 miniconda3-py11-23.5.2-0 1 安装 安装前需要确认一下系统及用户的环境变量中不要存在中文, 在 CMD 中直接执行 path 或者 git-bash 中执行 echo</description>
     </item>
     
     <item>
       <title>python | 鬼谷子数学问题</title>
-      <link>https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/tech/python-logic-problem-guiguzi/</link>
+      <link>https://bobby-sheng.github.io/en/posts/tech/python-logic-problem-guiguzi/</link>
       <pubDate>Mon, 27 Feb 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/tech/python-logic-problem-guiguzi/</guid>
+      <guid>https://bobby-sheng.github.io/en/posts/tech/python-logic-problem-guiguzi/</guid>
       <description>一道乍看毫无逻辑，细想却很有趣的逻辑题</description>
     </item>
     
     <item>
       <title>python | 批量修改目录下文件名</title>
-      <link>https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/tech/python-rename-file/</link>
+      <link>https://bobby-sheng.github.io/en/posts/tech/python-rename-file/</link>
       <pubDate>Wed, 27 Jul 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/tech/python-rename-file/</guid>
+      <guid>https://bobby-sheng.github.io/en/posts/tech/python-rename-file/</guid>
       <description>将 windows 中某个目录下的所有文件中的下划线_替换为中划线-</description>
     </item>
     
     <item>
       <title>python | 修改 pip 源</title>
-      <link>https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/tech/python-change-pip-repo/</link>
+      <link>https://bobby-sheng.github.io/en/posts/tech/python-change-pip-repo/</link>
       <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/tech/python-change-pip-repo/</guid>
+      <guid>https://bobby-sheng.github.io/en/posts/tech/python-change-pip-repo/</guid>
       <description>1 清单 地址 中国科学技术大学 https://pypi.mirrors.ustc.edu.cn/simple 清华 https://pypi.tuna.tsinghua.edu.cn/simple 豆瓣 http://pypi.douban.com/simple 华中理工大学 http://pypi.hustunique.com/simple 山东理工大学 http://pypi.sdutlinux.org/simple 阿里云 https://mirrors.aliyun.com/pypi/simple/ 2 linux 环境 mkdir ~/.pip cat &amp;gt; ~/.pip/pip.conf &amp;lt;&amp;lt; EOF [global] trusted-host=mirrors.aliyun.com index-url=https://mirrors.aliyun.com/pypi/simple/ EOF 3 windows 环境 打开 cmd 使用 dos 命令 set 找到 userprofile 路径，在该路径下创建 pip 文件夹，在 pip 文件夹下创建 pip.ini pip.ini 具体配置 [global] timeout = 6000 index-url = https://pypi.tuna.tsinghua.edu.cn/simple trusted-host = pypi.tuna.tsinghua.edu.cn 以上</description>
     </item>
     

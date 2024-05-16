@@ -2,62 +2,62 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>🏷️ 标签 on Bobby Blog</title>
-    <link>https://bobby-sheng.github.io/BobbySheng.github.io/en/tags/</link>
+    <link>https://bobby-sheng.github.io/en/tags/</link>
     <description>Recent content in 🏷️ 标签 on Bobby Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 07 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://bobby-sheng.github.io/BobbySheng.github.io/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 07 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://bobby-sheng.github.io/en/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python</title>
-      <link>https://bobby-sheng.github.io/BobbySheng.github.io/en/tags/python/</link>
+      <link>https://bobby-sheng.github.io/en/tags/python/</link>
       <pubDate>Mon, 07 Aug 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://bobby-sheng.github.io/BobbySheng.github.io/en/tags/python/</guid>
+      <guid>https://bobby-sheng.github.io/en/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Windows</title>
-      <link>https://bobby-sheng.github.io/BobbySheng.github.io/en/tags/windows/</link>
+      <link>https://bobby-sheng.github.io/en/tags/windows/</link>
       <pubDate>Mon, 07 Aug 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://bobby-sheng.github.io/BobbySheng.github.io/en/tags/windows/</guid>
+      <guid>https://bobby-sheng.github.io/en/tags/windows/</guid>
       <description></description>
     </item>
     
     <item>
       <title>博客搭建</title>
-      <link>https://bobby-sheng.github.io/BobbySheng.github.io/en/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</link>
+      <link>https://bobby-sheng.github.io/en/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</link>
       <pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://bobby-sheng.github.io/BobbySheng.github.io/en/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</guid>
+      <guid>https://bobby-sheng.github.io/en/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Docker</title>
-      <link>https://bobby-sheng.github.io/BobbySheng.github.io/en/tags/docker/</link>
+      <link>https://bobby-sheng.github.io/en/tags/docker/</link>
       <pubDate>Thu, 05 May 2022 00:18:23 +0800</pubDate>
       
-      <guid>https://bobby-sheng.github.io/BobbySheng.github.io/en/tags/docker/</guid>
+      <guid>https://bobby-sheng.github.io/en/tags/docker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Obsidian</title>
-      <link>https://bobby-sheng.github.io/BobbySheng.github.io/en/tags/obsidian/</link>
+      <link>https://bobby-sheng.github.io/en/tags/obsidian/</link>
       <pubDate>Thu, 05 May 2022 00:18:23 +0800</pubDate>
       
-      <guid>https://bobby-sheng.github.io/BobbySheng.github.io/en/tags/obsidian/</guid>
+      <guid>https://bobby-sheng.github.io/en/tags/obsidian/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Wordpress</title>
-      <link>https://bobby-sheng.github.io/BobbySheng.github.io/en/tags/wordpress/</link>
+      <link>https://bobby-sheng.github.io/en/tags/wordpress/</link>
       <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://bobby-sheng.github.io/BobbySheng.github.io/en/tags/wordpress/</guid>
+      <guid>https://bobby-sheng.github.io/en/tags/wordpress/</guid>
       <description></description>
     </item>
     

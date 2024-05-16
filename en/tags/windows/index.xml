@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Windows on Bobby Blog</title>
-    <link>https://bobby-sheng.github.io/BobbySheng.github.io/en/tags/windows/</link>
+    <link>https://bobby-sheng.github.io/en/tags/windows/</link>
     <description>Recent content in Windows on Bobby Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 07 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://bobby-sheng.github.io/BobbySheng.github.io/en/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 07 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://bobby-sheng.github.io/en/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>windows | miniconda 配置 python 虚拟环境</title>
-      <link>https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/tech/windows-miniconda/</link>
+      <link>https://bobby-sheng.github.io/en/posts/tech/windows-miniconda/</link>
       <pubDate>Mon, 07 Aug 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://bobby-sheng.github.io/BobbySheng.github.io/en/posts/tech/windows-miniconda/</guid>
+      <guid>https://bobby-sheng.github.io/en/posts/tech/windows-miniconda/</guid>
       <description>0 前言 python 虚拟环境的重要性已经无需多言了, 目前所有支持 python 虚拟环境的工具中最好用的应该就是 conda 了, 最重要的一点是可以一键创建不同版本的 python 环境以适应不同的需求. Anaconda 比较臃肿, 本文使用无 GUI 的 miniconda. 环境: win10 miniconda3-py11-23.5.2-0 1 安装 安装前需要确认一下系统及用户的环境变量中不要存在中文, 在 CMD 中直接执行 path 或者 git-bash 中执行 echo</description>
     </item>
     
