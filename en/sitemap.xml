@@ -2,93 +2,93 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://bobby-sheng.github.io/en/posts/tech/</loc>
+    <loc>http://localhost:1313/en/posts/tech/</loc>
     <lastmod>2024-01-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bobby-sheng.github.io/en/posts/blog/hello-hugo/</loc>
+    <loc>http://localhost:1313/en/posts/blog/hello-hugo/</loc>
     <lastmod>2024-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bobby-sheng.github.io/en/posts/blog/</loc>
+    <loc>http://localhost:1313/en/posts/blog/</loc>
     <lastmod>2024-01-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bobby-sheng.github.io/en/posts/read/</loc>
+    <loc>http://localhost:1313/en/posts/read/</loc>
     <lastmod>2024-01-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bobby-sheng.github.io/en/posts/life/</loc>
+    <loc>http://localhost:1313/en/posts/life/</loc>
     <lastmod>2024-01-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bobby-sheng.github.io/en/posts/</loc>
+    <loc>http://localhost:1313/en/posts/</loc>
     <lastmod>2024-01-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bobby-sheng.github.io/en/</loc>
+    <loc>http://localhost:1313/en/</loc>
     <lastmod>2024-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bobby-sheng.github.io/en/tags/python/</loc>
+    <loc>http://localhost:1313/en/tags/python/</loc>
     <lastmod>2024-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bobby-sheng.github.io/en/tags/windows/</loc>
+    <loc>http://localhost:1313/en/tags/windows/</loc>
     <lastmod>2024-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bobby-sheng.github.io/en/posts/tech/windows-miniconda/</loc>
+    <loc>http://localhost:1313/en/posts/tech/windows-miniconda/</loc>
     <lastmod>2024-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bobby-sheng.github.io/en/tags/</loc>
+    <loc>http://localhost:1313/en/tags/</loc>
     <lastmod>2024-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bobby-sheng.github.io/en/posts/tech/python-logic-problem-guiguzi/</loc>
+    <loc>http://localhost:1313/en/posts/tech/python-logic-problem-guiguzi/</loc>
     <lastmod>2024-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bobby-sheng.github.io/en/posts/tech/python-rename-file/</loc>
+    <loc>http://localhost:1313/en/posts/tech/python-rename-file/</loc>
     <lastmod>2024-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bobby-sheng.github.io/en/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
+    <loc>http://localhost:1313/en/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
     <lastmod>2024-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bobby-sheng.github.io/en/tags/docker/</loc>
+    <loc>http://localhost:1313/en/tags/docker/</loc>
     <lastmod>2024-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bobby-sheng.github.io/en/posts/blog/docker-deploy-piclist/</loc>
+    <loc>http://localhost:1313/en/posts/blog/docker-deploy-piclist/</loc>
     <lastmod>2022-05-05T00:18:23+08:00</lastmod>
   </url><url>
-    <loc>https://bobby-sheng.github.io/en/tags/obsidian/</loc>
+    <loc>http://localhost:1313/en/tags/obsidian/</loc>
     <lastmod>2022-05-05T00:18:23+08:00</lastmod>
   </url><url>
-    <loc>https://bobby-sheng.github.io/en/posts/tech/python-change-pip-repo/</loc>
+    <loc>http://localhost:1313/en/posts/tech/python-change-pip-repo/</loc>
     <lastmod>2024-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bobby-sheng.github.io/en/about/</loc>
+    <loc>http://localhost:1313/en/about/</loc>
     <lastmod>2021-11-06T14:57:28+08:00</lastmod>
   </url><url>
-    <loc>https://bobby-sheng.github.io/en/links/</loc>
+    <loc>http://localhost:1313/en/links/</loc>
     <lastmod>2021-11-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bobby-sheng.github.io/en/talk/</loc>
+    <loc>http://localhost:1313/en/talk/</loc>
     <lastmod>2021-08-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bobby-sheng.github.io/en/tags/wordpress/</loc>
+    <loc>http://localhost:1313/en/tags/wordpress/</loc>
     <lastmod>2024-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bobby-sheng.github.io/en/posts/blog/wordpress-to-docker/</loc>
+    <loc>http://localhost:1313/en/posts/blog/wordpress-to-docker/</loc>
     <lastmod>2024-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bobby-sheng.github.io/en/posts/blog/typora-picgo-qiniu-upload-image/</loc>
+    <loc>http://localhost:1313/en/posts/blog/typora-picgo-qiniu-upload-image/</loc>
     <lastmod>2024-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bobby-sheng.github.io/en/posts/blog/wordpress-load-image-failed/</loc>
+    <loc>http://localhost:1313/en/posts/blog/wordpress-load-image-failed/</loc>
     <lastmod>2024-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bobby-sheng.github.io/en/posts/blog/wordpress-add-icp/</loc>
+    <loc>http://localhost:1313/en/posts/blog/wordpress-add-icp/</loc>
     <lastmod>2024-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bobby-sheng.github.io/en/posts/blog/wordpress-ssl/</loc>
+    <loc>http://localhost:1313/en/posts/blog/wordpress-ssl/</loc>
     <lastmod>2024-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bobby-sheng.github.io/en/archives/</loc>
+    <loc>http://localhost:1313/en/archives/</loc>
   </url><url>
-    <loc>https://bobby-sheng.github.io/en/search/</loc>
+    <loc>http://localhost:1313/en/search/</loc>
   </url><url>
-    <loc>https://bobby-sheng.github.io/en/categories/</loc>
+    <loc>http://localhost:1313/en/categories/</loc>
   </url><url>
-    <loc>https://bobby-sheng.github.io/en/series/</loc>
+    <loc>http://localhost:1313/en/series/</loc>
   </url>
 </urlset>
